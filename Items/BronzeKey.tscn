@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Inventory/bronze_key.png" type="Texture" id=2]
+
+[node name="BronzeKey" type="Node"]
+script = ExtResource( 1 )
+my_name = "Bronze Key"
+my_description = "This key almost looks like gold."
+amount_in_stack = 1
+item_sprite_path = ExtResource( 2 )

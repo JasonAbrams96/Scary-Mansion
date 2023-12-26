@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Map/Clock.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/House/clock.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/House/clock_hand.png" type="Texture" id=3]
+
+[node name="Clock" type="Node2D"]
+position = Vector2( 35, 29 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpriteClock" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Hand" type="Sprite" parent="SpriteClock"]
+texture = ExtResource( 3 )
+offset = Vector2( 0, -6 )

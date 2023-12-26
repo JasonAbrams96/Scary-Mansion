@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Images/Inventory/crowbar.png" type="Texture" id=1]
+[ext_resource path="res://Items/Item.gd" type="Script" id=2]
+
+[node name="Crowbar" type="Node"]
+script = ExtResource( 2 )
+my_name = "Crowbar"
+my_description = "Ths crowbar can be used to open locked crates and barrels. I also used it to get into this hosue."
+amount_in_stack = 1
+item_sprite_path = ExtResource( 1 )

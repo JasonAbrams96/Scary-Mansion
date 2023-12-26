@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Images/Inventory/wood_key.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Item
+
+"
+
+[node name="WoodKey" type="Node"]
+script = SubResource( 1 )
+my_name = "Wood Key"
+my_description = "This key could be used to open a wooden lock."
+amount_in_stack = 1
+item_sprite_path = ExtResource( 2 )

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Inventory/gold_key.png" type="Texture" id=2]
+
+[node name="GoldKey" type="Node"]
+script = ExtResource( 1 )
+my_name = "Gold Key"
+my_description = "This golden beauty has a twinkle to your eye. Salve for money or use it to for a golden lock."
+amount_in_stack = 1
+item_sprite_path = ExtResource( 2 )
