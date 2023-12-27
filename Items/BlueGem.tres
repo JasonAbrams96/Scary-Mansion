@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Inventory/blue_gem.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+my_name = "Blue Gem"
+my_description = "This gem looks like it could fit into a square slot."
+amount_in_stack = 1
+stack_max = 0
+item_sprite_path = ExtResource( 2 )
+my_type = 0

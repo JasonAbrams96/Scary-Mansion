@@ -17,7 +17,7 @@ var enemies_have_control = true
 var rendered_rooms = {}
 var unrendered_rooms = {}
 
-var inventory = {}
+var inventory = []
 
 var meta_data = {
 	"player_pos": Vector2(0,0),
@@ -25,6 +25,7 @@ var meta_data = {
 	"player_sanity":100,
 }
 
+#	This is to tell if the player has gotten the item or not
 var items = {
 	"wood key": false,
 	"iron key": false,
@@ -47,6 +48,7 @@ var items = {
 	"red diamond" : false,
 }
 
+#	These are for if the player has used the item to complete a task
 var gates = {
 	"got wood key": false,
 	"completed puzzle 1": false,
@@ -78,6 +80,8 @@ func _ready():
 	time_timer.pause_mode = PAUSE_MODE_STOP 
 	get_tree().current_scene.add_child(time_timer)
 	time_timer.start()
+	
+	
 	
 func set_gate(gate_name):
 	gates[gate_name] = true

@@ -6,3 +6,5 @@ Assets/Images/bookcase.aseprite
 *.import
 
 *.aseprite
+
+.mono/assemblies/Debug/
