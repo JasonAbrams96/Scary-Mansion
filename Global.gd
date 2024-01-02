@@ -81,7 +81,10 @@ func _ready():
 	get_tree().current_scene.add_child(time_timer)
 	time_timer.start()
 	
-	
+	#TESTING, REMOVE AFFTER WORKING
+	inventory.push_back(GlobalItems.items[0])
+	inventory.push_back(GlobalItems.items[2])
+	inventory.push_back(GlobalItems.items[1])
 	
 func set_gate(gate_name):
 	gates[gate_name] = true

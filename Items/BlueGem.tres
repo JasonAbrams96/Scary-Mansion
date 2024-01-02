@@ -10,4 +10,5 @@ my_description = "This gem looks like it could fit into a square slot."
 amount_in_stack = 1
 stack_max = 0
 item_sprite_path = ExtResource( 2 )
+item_slot_local = Vector2( 0, 0 )
 my_type = 0
