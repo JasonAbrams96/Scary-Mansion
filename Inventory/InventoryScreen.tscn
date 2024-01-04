@@ -12,20 +12,57 @@ position = Vector2( 413, 142 )
 texture = ExtResource( 1 )
 
 [node name="Left_Spot" type="Control" parent="Sprite"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 97.0
+margin_top = -55.0
+margin_right = 137.0
+margin_bottom = -15.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Item" parent="Sprite/Left_Spot" instance=ExtResource( 3 )]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 4.0
 
 [node name="Right_Spot" type="Control" parent="Sprite"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 98.0
+margin_top = 22.0
+margin_right = 138.0
+margin_bottom = 62.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Item" parent="Sprite/Right_Spot" instance=ExtResource( 3 )]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 3.0
+margin_bottom = 2.0
 
 [node name="Trash_Spot" type="Control" parent="Sprite"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 105.0
+margin_top = 76.0
+margin_right = 145.0
+margin_bottom = 116.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Item" parent="Sprite/Trash_Spot" instance=ExtResource( 3 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 110.0
+margin_top = 82.0
+margin_right = 110.0
+margin_bottom = 82.0
 
 [node name="Item_Spots" type="Control" parent="Sprite"]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Item" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -144.0
@@ -38,141 +75,165 @@ margin_left = -107.0
 margin_top = -88.0
 margin_right = -107.0
 margin_bottom = -88.0
+slot_num = 1
 
 [node name="Item3" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -70.0
 margin_top = -88.0
 margin_right = -70.0
 margin_bottom = -88.0
+slot_num = 2
 
 [node name="Item4" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -33.0
 margin_top = -88.0
 margin_right = -33.0
 margin_bottom = -88.0
+slot_num = 3
 
 [node name="Item5" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = 4.0
 margin_top = -88.0
 margin_right = 4.0
 margin_bottom = -88.0
+slot_num = 4
 
 [node name="Item6" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -144.0
 margin_top = -51.0
 margin_right = -144.0
 margin_bottom = -51.0
+slot_num = 5
 
 [node name="Item7" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -107.0
 margin_top = -51.0
 margin_right = -107.0
 margin_bottom = -51.0
+slot_num = 6
 
 [node name="Item8" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -70.0
 margin_top = -51.0
 margin_right = -70.0
 margin_bottom = -51.0
+slot_num = 7
 
 [node name="Item9" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -33.0
 margin_top = -51.0
 margin_right = -33.0
 margin_bottom = -51.0
+slot_num = 8
 
 [node name="Item10" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = 4.0
 margin_top = -51.0
 margin_right = 4.0
 margin_bottom = -51.0
+slot_num = 9
 
 [node name="Item11" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -144.0
 margin_top = -13.0
 margin_right = -144.0
 margin_bottom = -13.0
+slot_num = 10
 
 [node name="Item12" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -107.0
 margin_top = -13.0
 margin_right = -107.0
 margin_bottom = -13.0
+slot_num = 11
 
 [node name="Item13" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -70.0
 margin_top = -13.0
 margin_right = -70.0
 margin_bottom = -13.0
+slot_num = 12
 
 [node name="Item14" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -33.0
 margin_top = -13.0
 margin_right = -33.0
 margin_bottom = -13.0
+slot_num = 13
 
 [node name="Item15" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = 4.0
 margin_top = -13.0
 margin_right = 4.0
 margin_bottom = -13.0
+slot_num = 14
 
 [node name="Item16" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -144.0
 margin_top = 24.0
 margin_right = -144.0
 margin_bottom = 24.0
+slot_num = 15
 
 [node name="Item17" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -107.0
 margin_top = 24.0
 margin_right = -107.0
 margin_bottom = 24.0
+slot_num = 16
 
 [node name="Item18" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -70.0
 margin_top = 24.0
 margin_right = -70.0
 margin_bottom = 24.0
+slot_num = 17
 
 [node name="Item19" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -33.0
 margin_top = 24.0
 margin_right = -33.0
 margin_bottom = 24.0
+slot_num = 18
 
 [node name="Item20" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = 4.0
 margin_top = 24.0
 margin_right = 4.0
 margin_bottom = 24.0
+slot_num = 19
 
 [node name="Item21" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -144.0
 margin_top = 62.0
 margin_right = -144.0
 margin_bottom = 62.0
+slot_num = 20
 
 [node name="Item22" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -107.0
 margin_top = 62.0
 margin_right = -107.0
 margin_bottom = 62.0
+slot_num = 21
 
 [node name="Item23" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -70.0
 margin_top = 62.0
 margin_right = -70.0
 margin_bottom = 62.0
+slot_num = 22
 
 [node name="Item24" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = -33.0
 margin_top = 62.0
 margin_right = -33.0
 margin_bottom = 62.0
+slot_num = 23
 
 [node name="Item25" parent="Sprite/Item_Spots" instance=ExtResource( 3 )]
 margin_left = 4.0
 margin_top = 62.0
 margin_right = 4.0
 margin_bottom = 62.0
+slot_num = 24

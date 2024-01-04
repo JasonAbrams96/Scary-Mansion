@@ -1,14 +1,14 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Items/Item.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/Inventory/puzzle_pieces.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Inventory/pipe_wrench.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
-my_name = "Puzzle Piece"
-my_description = "I need to get all of the pieces to finish a puzzle somewhere."
+my_name = "Pipe Wrench"
+my_description = "This looks like it could be used to take apart some leaky pipes."
 amount_in_stack = 1
-stack_max = 6
+stack_max = 0
 item_sprite_path = ExtResource( 2 )
 item_slot_local = -1
-my_type = 0
+my_type = 1

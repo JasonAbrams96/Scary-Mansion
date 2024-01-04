@@ -10,5 +10,5 @@ my_description = "This bone could be used for a dog."
 amount_in_stack = 1
 stack_max = 3
 item_sprite_path = ExtResource( 2 )
-item_slot_local = Vector2( 0, 0 )
+item_slot_local = -1
 my_type = 1
