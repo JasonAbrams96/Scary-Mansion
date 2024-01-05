@@ -8,3 +8,8 @@ func _ready():
 	print(vignette_intensity)
 	print(vignette_opacity)
 	print(vignette_rgb)
+	
+	Global.connect("sanity_changed", self, "update_vignette")
+	
+func update_vignette(new_sanity):
+	pass

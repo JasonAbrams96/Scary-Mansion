@@ -14,7 +14,6 @@ func _ready():
 		
 		#While there is a next filename, check to see if it ends with .tres
 		while filename != "":
-			print("loading...")
 			if filename.ends_with(".tres"):
 				#If has .tres then load as a resource
 				var resource = ResourceLoader.load(path + filename)

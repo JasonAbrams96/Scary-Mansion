@@ -237,3 +237,12 @@ margin_top = 62.0
 margin_right = 4.0
 margin_bottom = 62.0
 slot_num = 24
+
+[node name="Button" type="Button" parent="Sprite"]
+margin_left = 143.0
+margin_top = -113.0
+margin_right = 163.0
+margin_bottom = -93.0
+text = "X"
+
+[connection signal="pressed" from="Sprite/Button" to="." method="_on_Button_pressed"]

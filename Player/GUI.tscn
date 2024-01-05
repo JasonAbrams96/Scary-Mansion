@@ -5,7 +5,7 @@
 [ext_resource path="res://Player/GUI.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.662745, 0.564706, 0.0117647, 1 )
+bg_color = Color( 0.0196078, 0.0156863, 0.00392157, 1 )
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -31,16 +31,19 @@ margin_right = 133.0
 margin_bottom = 285.0
 custom_styles/panel = SubResource( 2 )
 
-[node name="TextureRect2" type="TextureRect" parent="Panel"]
+[node name="SanityTexture" type="TextureRect" parent="Panel"]
 margin_left = 8.0
 margin_right = 48.0
 margin_bottom = 40.0
 texture = SubResource( 1 )
 stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="InventoryTexture" type="TextureRect" parent="Panel"]
 margin_left = 80.0
 margin_right = 120.0
 margin_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture = ExtResource( 1 )
 stretch_mode = 4
+
+[connection signal="gui_input" from="Panel/InventoryTexture" to="." method="_on_InventoryTexture_gui_input"]

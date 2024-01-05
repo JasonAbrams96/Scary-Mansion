@@ -4,6 +4,7 @@ signal item_got(item)
 signal item_used(item)
 signal sanity_changed(new_sanity)
 signal time_updated(new_time)
+signal gui_inventory_closed
 
 var num_of_ghosts = 0
 const max_ghosts = 10
@@ -13,6 +14,7 @@ const max_zombs = 10
 var current_room = "Outside"
 var player_has_control = true
 var enemies_have_control = true
+var sanity = 100
 
 var rendered_rooms = {}
 var unrendered_rooms = {}
@@ -106,6 +108,6 @@ func time_timer_timeout():
 		current_min = 0
 	if current_hour >= hour_max:
 		current_hour = 0
-		
-			
+	sanity -= 1
+	emit_signal("sanity_changed", sanity)
 	emit_signal("time_updated")

@@ -14,3 +14,8 @@ func _ready():
 			item_spots[inven[i].item_slot_local].set_item_pic(inven[i])
 		
 
+
+
+func _on_Button_pressed():
+	Global.emit_signal("gui_inventory_closed")
+	queue_free()

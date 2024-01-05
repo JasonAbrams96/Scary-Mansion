@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://InteractableItems/SlideyPuzzle.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Puzzle/Carl_Puzzle.png" type="Texture" id=2]
+
+[node name="SlideyPuzzle" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 267.0
+margin_top = 15.0
+margin_right = 547.0
+margin_bottom = 295.0
+
+[node name="Pieces" type="Control" parent="Panel"]
+margin_right = 279.0
+margin_bottom = 279.0
+
+[node name="piece1" type="Control" parent="Panel/Pieces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece1"]
+position = Vector2( 43, 43 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+
+[node name="piece2" type="Control" parent="Panel/Pieces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece2"]
+position = Vector2( 129, 43 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="piece3" type="Control" parent="Panel/Pieces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece3"]
+position = Vector2( 215, 43 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+frame = 2
+
+[node name="piece4" type="Control" parent="Panel/Pieces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece4"]
+position = Vector2( 43, 129 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+frame = 3
+
+[node name="piece5" type="Control" parent="Panel/Pieces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece5"]
+position = Vector2( 129, 129 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+frame = 4
+
+[node name="piece6" type="Control" parent="Panel/Pieces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece6"]
+position = Vector2( 215, 129 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+frame = 5
+
+[node name="piece7" type="Control" parent="Panel/Pieces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece7"]
+position = Vector2( 43, 215 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+frame = 6
+
+[node name="piece8" type="Control" parent="Panel/Pieces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece8"]
+position = Vector2( 129, 215 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+frame = 7
+
+[node name="piece9" type="Control" parent="Panel/Pieces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece9"]
+position = Vector2( 215, 215 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+frame = 8

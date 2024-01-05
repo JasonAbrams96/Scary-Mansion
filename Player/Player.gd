@@ -4,8 +4,6 @@ extends KinematicBody2D
 var motion = Vector2()
 var speed = 640
 var run_speed = 840
-var insanity
-
 var my_speed = speed
 
 func _ready():
