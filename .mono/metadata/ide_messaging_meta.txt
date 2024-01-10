@@ -1,2 +1,0 @@
-﻿53003
-C:/Program Files/Godot-Mono-3.5/Godot_v3.5.3-stable_mono_win64/Godot_v3.5.3-stable_mono_win64/Godot_v3.5.3-stable_mono_win64.exe
