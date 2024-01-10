@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 56, 2.5 )
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Floor" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 56, 2.5 )
