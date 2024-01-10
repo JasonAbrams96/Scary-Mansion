@@ -56,7 +56,8 @@ var gates = {
 	"completed puzzle 1": false,
 	"completed puzzle 2": false,
 	"completed button puzzle" : false,
-	"Completed box puzzle" : false
+	"completed box puzzle" : false,
+	"completed slide puzzle": false,
 }
 
 var good_button_codes = {

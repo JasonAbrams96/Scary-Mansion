@@ -1,117 +1,284 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://InteractableItems/SlideyPuzzle.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Puzzle/Carl_Puzzle.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+onready var pieces = $Panel/Pieces.get_children()
+var puzzle = []
+var hidden_piece = null
+
+var good_frames = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+
+var item_to_win
+
+func _ready():
+	randomize()
+	var pieces_var = -1
+	
+	for i in range(3):
+		puzzle.append([])
+		for j in range(3):
+			pieces_var += 1
+			puzzle[i].append([])
+			puzzle[i][j].append(pieces[pieces_var].get_children()[0])
+			
+	scramble()
+	remove_piece()
+
+func scramble():
+	#Scrambles the puzzle
+	var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+	for i in range(3):
+		for j in range(3):
+			var r = randi() % arr.size()
+			puzzle[i][j][0].frame = arr[r]
+			arr.remove(r)
+
+func remove_piece():
+	var i = randi() % 3
+	var j = randi() % 3
+	
+	var par = puzzle[i][j][0]
+	par.visible = false
+	hidden_piece = par
+
+func check_pos(mouse):
+	#	Checks each piece to see if the distance to mouse is less than 41 to select the piece that is
+	#	clicked on.
+	for i in range(3):
+		for j in range(3):
+			var center = puzzle[i][j][0].get_parent().rect_global_position + puzzle[i][j][0].get_parent().rect_pivot_offset
+			if center.distance_to(mouse) < 41:
+				return puzzle[i][j][0]
+				
+func switch(piece):
+	if piece == null:
+		return false
+		
+	var diff = piece.global_position - hidden_piece.global_position
+	var temp_frame = piece.frame
+	
+	#cases I don't want to switch pieces
+	if diff == Vector2.ZERO:
+		return false
+	elif diff.x > 88 or diff.x < -88 or diff.y > 88 or diff.x < -88:
+		return false
+	elif abs(diff.x) == 88 and abs(diff.y) == 88:
+		return false
+		
+	#Actually switches the pieces
+	piece.frame = hidden_piece.frame
+	hidden_piece.frame = temp_frame
+	piece.visible = false
+	hidden_piece.visible = true
+	hidden_piece = piece
+	
+	return true
+	
+func check_puzzle():
+	for i in range(3):
+		for j in range(3):
+			if puzzle[i][j][0].frame != good_frames[i][j]:
+				return false
+				
+	return true
+	
+func give_item_to_player():
+	Global.inventory.append(item_to_win)
+	
+func _on_piece_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		var mb = get_global_mouse_position()
+		var piece = check_pos(mb)
+		
+		if switch(piece):
+			if check_puzzle():
+				hidden_piece.visible = true
+				Global.gates[\"completed slide puzzle\"] = true
+				print(\"Player Won Puzzle\") #TODO
+		
+"
 
 [node name="SlideyPuzzle" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+margin_left = -8.0
+margin_right = -8.0
+script = SubResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 267.0
-margin_top = 15.0
-margin_right = 547.0
-margin_bottom = 295.0
+margin_left = 8.0
+margin_right = 264.0
+margin_bottom = 256.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Pieces" type="Control" parent="Panel"]
-margin_right = 279.0
-margin_bottom = 279.0
 
-[node name="piece1" type="Control" parent="Panel/Pieces"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="piece0" type="Control" parent="Panel/Pieces"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece1"]
-position = Vector2( 43, 43 )
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece0"]
+scale = Vector2( 0.941176, 0.941176 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 3
 vframes = 3
 
-[node name="piece2" type="Control" parent="Panel/Pieces"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="piece1" type="Control" parent="Panel/Pieces"]
+margin_left = 88.0
+margin_right = 168.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece2"]
-position = Vector2( 129, 43 )
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece1"]
+scale = Vector2( 0.941176, 0.941176 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 3
 vframes = 3
 frame = 1
 
-[node name="piece3" type="Control" parent="Panel/Pieces"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="piece2" type="Control" parent="Panel/Pieces"]
+margin_left = 176.0
+margin_right = 256.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece3"]
-position = Vector2( 215, 43 )
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece2"]
+scale = Vector2( 0.941176, 0.941176 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 3
 vframes = 3
 frame = 2
 
-[node name="piece4" type="Control" parent="Panel/Pieces"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="piece3" type="Control" parent="Panel/Pieces"]
+margin_top = 88.0
+margin_right = 80.0
+margin_bottom = 168.0
+rect_pivot_offset = Vector2( 40, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece4"]
-position = Vector2( 43, 129 )
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece3"]
+scale = Vector2( 0.941176, 0.941176 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 3
 vframes = 3
 frame = 3
 
-[node name="piece5" type="Control" parent="Panel/Pieces"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="piece4" type="Control" parent="Panel/Pieces"]
+margin_left = 88.0
+margin_top = 88.0
+margin_right = 168.0
+margin_bottom = 168.0
+rect_pivot_offset = Vector2( 40, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece5"]
-position = Vector2( 129, 129 )
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece4"]
+scale = Vector2( 0.941176, 0.941176 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 3
 vframes = 3
 frame = 4
 
-[node name="piece6" type="Control" parent="Panel/Pieces"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="piece5" type="Control" parent="Panel/Pieces"]
+margin_left = 176.0
+margin_top = 88.0
+margin_right = 256.0
+margin_bottom = 168.0
+rect_pivot_offset = Vector2( 40, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece6"]
-position = Vector2( 215, 129 )
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece5"]
+scale = Vector2( 0.941176, 0.941176 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 3
 vframes = 3
 frame = 5
 
-[node name="piece7" type="Control" parent="Panel/Pieces"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="piece6" type="Control" parent="Panel/Pieces"]
+margin_top = 176.0
+margin_right = 80.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 40, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece7"]
-position = Vector2( 43, 215 )
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece6"]
+scale = Vector2( 0.941176, 0.941176 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 3
 vframes = 3
 frame = 6
 
-[node name="piece8" type="Control" parent="Panel/Pieces"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="piece7" type="Control" parent="Panel/Pieces"]
+margin_left = 88.0
+margin_top = 176.0
+margin_right = 168.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 40, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece8"]
-position = Vector2( 129, 215 )
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece7"]
+scale = Vector2( 0.941176, 0.941176 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 3
 vframes = 3
 frame = 7
 
-[node name="piece9" type="Control" parent="Panel/Pieces"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="piece8" type="Control" parent="Panel/Pieces"]
+margin_left = 176.0
+margin_top = 176.0
+margin_right = 256.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 40, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece9"]
-position = Vector2( 215, 215 )
+[node name="Sprite" type="Sprite" parent="Panel/Pieces/piece8"]
+scale = Vector2( 0.941176, 0.941176 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 3
 vframes = 3
 frame = 8
+
+[connection signal="gui_input" from="Panel/Pieces/piece0" to="." method="_on_piece_gui_input"]
+[connection signal="gui_input" from="Panel/Pieces/piece1" to="." method="_on_piece_gui_input"]
+[connection signal="gui_input" from="Panel/Pieces/piece2" to="." method="_on_piece_gui_input"]
+[connection signal="gui_input" from="Panel/Pieces/piece3" to="." method="_on_piece_gui_input"]
+[connection signal="gui_input" from="Panel/Pieces/piece4" to="." method="_on_piece_gui_input"]
+[connection signal="gui_input" from="Panel/Pieces/piece5" to="." method="_on_piece_gui_input"]
+[connection signal="gui_input" from="Panel/Pieces/piece6" to="." method="_on_piece_gui_input"]
+[connection signal="gui_input" from="Panel/Pieces/piece7" to="." method="_on_piece_gui_input"]
+[connection signal="gui_input" from="Panel/Pieces/piece8" to="." method="_on_piece_gui_input"]
