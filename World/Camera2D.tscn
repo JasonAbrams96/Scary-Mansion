@@ -5,25 +5,25 @@
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
-shader_param/vignette_intensity = 0.4
-shader_param/vignette_opacity = 0.5
+shader_param/vignette_intensity = 9.418
+shader_param/vignette_opacity = 1.0
 shader_param/vignette_rgb = Color( 0, 0, 0, 1 )
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 1 )
-shader_param/vignette_intensity = 0.1
-shader_param/vignette_opacity = 1.0
+shader_param/vignette_intensity = 0.4
+shader_param/vignette_opacity = 0.5
 shader_param/vignette_rgb = Color( 0, 0, 0, 1 )
 
 [node name="Camera2D" type="Camera2D"]
 material = SubResource( 1 )
-position = Vector2( 400, 144 )
+position = Vector2( 392, 112 )
 current = true
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource( 2 )
-margin_left = -400.0
-margin_top = -144.0
-margin_right = 400.0
-margin_bottom = 144.0
+margin_left = -392.0
+margin_top = -112.0
+margin_right = 392.0
+margin_bottom = 112.0

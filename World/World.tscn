@@ -13,7 +13,10 @@
 script = ExtResource( 4 )
 
 [node name="Walls" type="Node2D" parent="."]
-visible = false
+position = Vector2( 0, -56 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="1Wall" parent="Walls" instance=ExtResource( 3 )]
 position = Vector2( 56, 168 )
@@ -43,20 +46,26 @@ position = Vector2( 840, 168 )
 position = Vector2( 920, 240 )
 
 [node name="DeskTable" parent="BehindPlayer" instance=ExtResource( 6 )]
+position = Vector2( -16, -64 )
 
 [node name="Bookcase" parent="BehindPlayer" instance=ExtResource( 5 )]
-position = Vector2( -664, -24 )
+position = Vector2( -656, -88 )
 
 [node name="PuzzleBox" parent="BehindPlayer" instance=ExtResource( 7 )]
-position = Vector2( 48, -48 )
+position = Vector2( 40, -112 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 184 )
 
 [node name="InFrontPlayer" type="Node2D" parent="."]
 
-[node name="Floor" type="Node" parent="InFrontPlayer"]
+[node name="Floor" type="Node2D" parent="InFrontPlayer"]
+position = Vector2( 0, -64 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" parent="InFrontPlayer/Floor" instance=ExtResource( 1 )]
 position = Vector2( 0, 280 )

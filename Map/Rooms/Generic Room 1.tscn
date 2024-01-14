@@ -9,6 +9,9 @@
 
 [node name="1Wall" parent="." instance=ExtResource( 3 )]
 position = Vector2( 56, 176 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="2Wall" parent="1Wall" instance=ExtResource( 1 )]
 position = Vector2( 112, 0 )
@@ -30,6 +33,9 @@ position = Vector2( 560, 0 )
 
 [node name="Floor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 280 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Floor1" parent="Floor" instance=ExtResource( 4 )]
 position = Vector2( 112, 0 )
