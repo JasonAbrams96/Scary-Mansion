@@ -13,6 +13,10 @@ func _ready():
 		else:
 			item_spots[inven[i].item_slot_local].set_item_pic(inven[i])
 		
+		# To display items in stack or not
+		if inven[i].stack_max != 0:
+			item_spots[inven[i].item_slot_local].toggle_label_visibility()
+			item_spots[inven[i].item_slot_local].set_amount_label(inven[i].amount_in_stack, inven[i].stack_max)
 
 
 

@@ -27,29 +27,6 @@ var meta_data = {
 	"player_sanity":100,
 }
 
-#	This is to tell if the player has gotten the item or not
-var items = {
-	"wood key": false,
-	"iron key": false,
-	"bronze key": false,
-	"silver key": false,
-	"gold key": false,
-	"red book": false,
-	"orange book": false,
-	"yellow book": false,
-	"green book": false,
-	"blue book": false,
-	"purple book": false,
-	"gold book": false,
-	"puzzle pieces": false,
-	"metal bar": false,
-	"lighter" : false,
-	"button" : [false, false, false],
-	"red gem" : true,
-	"blue gem" : true,
-	"red diamond" : false,
-}
-
 #	These are for if the player has used the item to complete a task
 var gates = {
 	"got wood key": false,
@@ -88,19 +65,10 @@ func _ready():
 	inventory.push_back(GlobalItems.items[0])
 	inventory.push_back(GlobalItems.items[2])
 	inventory.push_back(GlobalItems.items[1])
+	inventory.push_back(GlobalItems.items[6])
 	
 func set_gate(gate_name):
 	gates[gate_name] = true
-
-func set_item(item_name):
-	if item_name == "button":
-		for i in item_name["button"]:
-			if i == false:
-				i = true
-				break
-	else:
-		items[item_name] = true
-
 
 func time_timer_timeout():
 	current_min += 1
@@ -112,3 +80,11 @@ func time_timer_timeout():
 	sanity -= 1
 	emit_signal("sanity_changed", sanity)
 	emit_signal("time_updated")
+
+func inventory_update():
+	for i in range(inventory.size()):
+		if inventory[i].amount_in_stack == 0 and inventory[i].stack_max != 0:
+			inventory.remove(i)
+	
+	
+	

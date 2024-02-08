@@ -8,7 +8,7 @@
 [node name="Generic Room 1" type="Node2D"]
 
 [node name="1Wall" parent="." instance=ExtResource( 3 )]
-position = Vector2( 56, 176 )
+position = Vector2( 56, 112 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -32,7 +32,7 @@ position = Vector2( 448, 0 )
 position = Vector2( 560, 0 )
 
 [node name="Floor" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, 280 )
+position = Vector2( 0, 216 )
 __meta__ = {
 "_edit_group_": true
 }

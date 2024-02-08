@@ -1,6 +1,7 @@
 extends Node
 
-var items = []
+var items = {}
+var id_num = 0
 
 func _ready():
 	print("Loading item resources")
@@ -17,7 +18,9 @@ func _ready():
 			if filename.ends_with(".tres"):
 				#If has .tres then load as a resource
 				var resource = ResourceLoader.load(path + filename)
-				items.push_back(resource)
+				resource.id_no = id_num
+				id_num += 1
+				items[resource.id_no] = resource
 				
 			filename = direct.get_next()#Gets next filename
 		

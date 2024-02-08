@@ -8,6 +8,8 @@ export var amount_in_stack:int
 export var stack_max:int
 export var item_sprite_path:Resource
 
+export var id_no = -1
+
 export var item_slot_local:int = -1
 
 enum Type { KEY, TEMP, USED}
