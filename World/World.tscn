@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Map/RoomAssets1/DeskTable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Map/RoomAssets1/1PuzzleBox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Map/Rooms/Staircase Room Down.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Map/Rooms/Foyer Room.tscn" type="PackedScene" id=10]
 
 [node name="World" type="Node"]
 script = ExtResource( 4 )
@@ -53,6 +55,12 @@ position = Vector2( -656, -88 )
 
 [node name="PuzzleBox" parent="BehindPlayer" instance=ExtResource( 7 )]
 position = Vector2( 40, -112 )
+
+[node name="Staircase Room Down" parent="." instance=ExtResource( 9 )]
+position = Vector2( -784, 0 )
+
+[node name="Foyer" parent="." instance=ExtResource( 10 )]
+position = Vector2( -1568, 0 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
 
