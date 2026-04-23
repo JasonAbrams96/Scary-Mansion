@@ -10,5 +10,6 @@ my_description = "This crowbar could be used to open a crate or barrel"
 amount_in_stack = 1
 stack_max = 0
 item_sprite_path = ExtResource( 2 )
+id_no = -1
 item_slot_local = -1
 my_type = 0

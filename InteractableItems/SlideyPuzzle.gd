@@ -9,7 +9,6 @@ var good_frames = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
 var item_to_win
 
 func _ready():
-	randomize()
 	var pieces_var = -1
 	
 	for i in range(3):
@@ -27,13 +26,13 @@ func scramble():
 	var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 	for i in range(3):
 		for j in range(3):
-			var r = randi() % arr.size()
+			var r = Global.rng.randi() % arr.size()
 			puzzle[i][j][0].frame = arr[r]
 			arr.remove(r)
 
 func remove_piece():
-	var i = randi() % 3
-	var j = randi() % 3
+	var i = Global.rng.randi() % 3
+	var j = Global.rng.randi() % 3
 	
 	var par = puzzle[i][j][0]
 	par.visible = false
@@ -45,7 +44,7 @@ func check_pos(mouse):
 	for i in range(3):
 		for j in range(3):
 			var center = puzzle[i][j][0].get_parent().rect_global_position + puzzle[i][j][0].get_parent().rect_pivot_offset
-			if center.distance_to(mouse) < 41:
+			if center.distance_to(mouse) < 41 * rect_scale.x:
 				return puzzle[i][j][0]
 				
 func switch(piece):
@@ -58,9 +57,9 @@ func switch(piece):
 	#cases I don't want to switch pieces
 	if diff == Vector2.ZERO:
 		return false
-	elif diff.x > 88 or diff.x < -88 or diff.y > 88 or diff.x < -88:
+	elif diff.x > 88* rect_scale.x or diff.x < -88* rect_scale.x or diff.y > 88* rect_scale.x or diff.x < -88* rect_scale.x:
 		return false
-	elif abs(diff.x) == 88 and abs(diff.y) == 88:
+	elif abs(diff.x) == floor(88* rect_scale.x) and abs(diff.y) == floor(88* rect_scale.x):
 		return false
 		
 	#Actually switches the pieces

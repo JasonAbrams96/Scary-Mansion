@@ -10,5 +10,6 @@ my_description = "This valuable resource can come in handy for a gun."
 amount_in_stack = 1
 stack_max = 16
 item_sprite_path = ExtResource( 2 )
+id_no = -1
 item_slot_local = -1
 my_type = 1

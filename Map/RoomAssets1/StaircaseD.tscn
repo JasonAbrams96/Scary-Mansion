@@ -34,6 +34,7 @@ position = Vector2( 0.5, -39.5 )
 shape = SubResource( 1 )
 
 [node name="ArrowSprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, -67 )
 rotation = -3.14159
 texture = ExtResource( 2 )

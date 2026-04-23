@@ -1,19 +1,39 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Player/Playerpng.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
+[ext_resource path="res://Player/GUI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ShaderMaterial" id=3]
 
-[node name="Player" type="KinematicBody2D" groups=["player"]]
-position = Vector2( 36, 252 )
-script = ExtResource( 2 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9, 39 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="Player" type="KinematicBody2D" groups=["player"]]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 3 )
 texture = ExtResource( 1 )
+
+[node name="LabelMessage" type="Label" parent="."]
+margin_left = -104.0
+margin_top = -104.0
+margin_right = 112.0
+margin_bottom = -40.0
+text = "Duh Hello"
+autowrap = true
+
+[node name="Timer" type="Timer" parent="LabelMessage"]
+wait_time = 0.05
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 9 )
+shape = SubResource( 1 )
+
+[node name="GUI" parent="." instance=ExtResource( 3 )]
+
+[connection signal="timeout" from="LabelMessage/Timer" to="." method="_on_Timer_timeout"]

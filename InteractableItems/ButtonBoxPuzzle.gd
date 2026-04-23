@@ -8,6 +8,8 @@ var row = 5
 var col = 5
 var is_on = false
 
+var contents = null
+
 func _ready():
 	for i in range(row):
 		but_color_array.append([])
@@ -27,7 +29,7 @@ func _ready():
 	
 func randomize_buttons():
 	var regions = [0, 21, 42]
-	var my_color = randi() % 2
+	var my_color = Global.rng.randi() % 2
 	for i in range(row):
 		for j in range(col):
 			
@@ -106,7 +108,9 @@ func _on_ExitButton_pressed():
 
 func _on_Button_pressed():
 	is_on = !is_on
-	if is_on:
-		$Button.text = "On"
-	else:
-		$Button.text = "Off"
+
+func set_contents(con):
+	if con is Resource:
+		contents = con
+		return true
+	return false

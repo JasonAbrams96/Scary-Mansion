@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Images/House/Light1_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Map/RoomAssets1/Damagables.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float time : hint_range(0.0, 10.0); // Time parameter for animation
+uniform float intensity : hint_range(0.0, 1.0) = 0.8; // Base intensity of the circle
+uniform float flicker_speed : hint_range(0.1, 5.0) = 1.0; // Speed of flickering
+uniform float min_intensity : hint_range(0.0, 1.0) = 0.2; // Minimum intensity
+
+void fragment() {
+    // Calculate pulsation factor using sine function
+    float pulsation = sin(TIME * flicker_speed) * 0.5 + 0.5;
+
+    // Calculate the distance from the fragment to the center of the UV space
+    vec2 center = vec2(0.5, 0.5); // Center of the UV space
+    float distance_to_center = distance(UV, center);
+
+    // Define the radius of the circle in UV space
+    float radius = 0.75;
+
+    // Calculate the intensity based on the distance to the center (create a circular shape)
+    float circle_intensity = smoothstep(radius - 0.5, radius + 0.5, radius - distance_to_center);
+
+    // Calculate final intensity by combining base intensity with pulsation factor and circle intensity
+    float final_intensity = intensity * pulsation * circle_intensity;
+
+    // Ensure final intensity never goes below the minimum intensity
+    final_intensity = max(final_intensity, min_intensity);
+
+    // Calculate the mask for the circular shape
+    float circle_mask = smoothstep(radius - 0.5, radius + 0.05, radius - distance_to_center);
+
+    // Output final color with adjusted intensity and masked by the circular shape
+    COLOR = vec4(1.0, 0.8, 0.0, final_intensity) * circle_mask;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/time = 7.5
+shader_param/intensity = 1.0
+shader_param/flicker_speed = 0.1
+shader_param/min_intensity = 0.2
+
+[node name="CeilingLight" type="Sprite"]
+texture = ExtResource( 1 )
+hframes = 2
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 2 )
+margin_left = -48.0
+margin_right = 48.0
+margin_bottom = 88.0
+rect_pivot_offset = Vector2( 184, 160 )

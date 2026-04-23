@@ -1,7 +1,12 @@
 extends Node
 
-var items = {}
+signal update_hands(r_or_l, texture)
+
+var items = {} # a dictionary used to lookup items by id
+var items_names = {} # 	A dict to find id number using the name of the item to look up
 var id_num = 0
+
+
 
 func _ready():
 	print("Loading item resources")
@@ -21,8 +26,9 @@ func _ready():
 				resource.id_no = id_num
 				id_num += 1
 				items[resource.id_no] = resource
-				
+				items_names[resource.my_name.to_lower()] = resource.id_no
 			filename = direct.get_next()#Gets next filename
+			print(filename)
 		
 		direct.list_dir_end() #Closes directory
 

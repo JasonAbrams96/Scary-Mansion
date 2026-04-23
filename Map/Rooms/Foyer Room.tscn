@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Map/RoomAssets1/Chanduler.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Map/RoomAssets1/Banner1.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Map/RoomAssets1/3Wall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Map/RoomAssets1/LockedSideDoor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Map/RoomAssets1/Window_Small.tscn" type="PackedScene" id=10]
 
 [node name="Foyer" type="Node2D"]
 
@@ -83,3 +84,9 @@ position = Vector2( 392, 104 )
 
 [node name="LockedDoor" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0, 136 )
+
+[node name="Window" parent="." instance=ExtResource( 10 )]
+position = Vector2( 224, 32 )
+
+[node name="Window2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 560, 32 )

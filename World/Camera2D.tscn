@@ -11,7 +11,7 @@ shader_param/vignette_rgb = Color( 0, 0, 0, 1 )
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 1 )
-shader_param/vignette_intensity = 0.4
+shader_param/vignette_intensity = 0.3
 shader_param/vignette_opacity = 0.5
 shader_param/vignette_rgb = Color( 0, 0, 0, 1 )
 
@@ -27,3 +27,17 @@ margin_left = -392.0
 margin_top = -112.0
 margin_right = 392.0
 margin_bottom = 112.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -392.0
+margin_top = -360.0
+margin_right = 400.0
+margin_bottom = -112.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = -392.0
+margin_top = 112.0
+margin_right = 400.0
+margin_bottom = 360.0
+color = Color( 0, 0, 0, 1 )

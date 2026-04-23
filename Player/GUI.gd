@@ -5,7 +5,7 @@ var inventory_opened = false
 
 func _ready():
 	Global.connect("sanity_changed", self, "update_sanity")
-
+	GlobalItems.connect("update_hands", self, "update_holding_item")
 
 func _on_InventoryTexture_gui_input(event):
 	if event is InputEventMouseButton:
@@ -43,3 +43,16 @@ func update_sanity(new_sanity):
 		$Panel/SanityTexture.texture.region.position.x = 288
 #	elif new_sanity >= 0:
 #		$Panel/SanityTexture.texture.region.position.x = 320
+
+func update_holding_item(r_or_l, texture):
+	
+	
+	#If 0 for r_or_l then it is RIGHT:
+	
+	if r_or_l == 0:
+		$Panel2/RIghtHandTexture.texture = texture
+	
+	#If 1 for r_or_l then it is LFET:
+	elif r_or_l == 1:
+		$Panel2/LeftHandTexture.texture = texture
+		

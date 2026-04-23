@@ -26,9 +26,9 @@ script = ExtResource( 3 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = 5.0
-margin_top = 177.0
+margin_top = 393.0
 margin_right = 134.0
-margin_bottom = 217.0
+margin_bottom = 433.0
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -48,5 +48,24 @@ margin_bottom = 40.0
 mouse_default_cursor_shape = 2
 texture = ExtResource( 1 )
 stretch_mode = 4
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 650.0
+margin_top = 393.0
+margin_right = 779.0
+margin_bottom = 433.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="LeftHandTexture" type="TextureRect" parent="Panel2"]
+margin_left = 12.0
+margin_right = 52.0
+margin_bottom = 40.0
+expand = true
+
+[node name="RIghtHandTexture" type="TextureRect" parent="Panel2"]
+margin_left = 79.0
+margin_right = 119.0
+margin_bottom = 40.0
+expand = true
 
 [connection signal="gui_input" from="Panel/InventoryTexture" to="." method="_on_InventoryTexture_gui_input"]

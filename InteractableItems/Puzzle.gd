@@ -21,7 +21,7 @@ func set_item(node):
 #	Scrambles the rotation of the sprites
 func scramble():
 	for i in pieces:
-		var r = randi() % 4
+		var r = Global.rng.randi() % 4
 		
 		if r == 0:
 			i.rotation_degrees = 0

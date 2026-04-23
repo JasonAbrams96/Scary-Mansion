@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Map/RoomAssets1/Damagables.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/House/SmallWindow_sheet.png" type="Texture" id=2]
+
+[node name="Window" type="Sprite"]
+texture = ExtResource( 2 )
+hframes = 3
+script = ExtResource( 1 )

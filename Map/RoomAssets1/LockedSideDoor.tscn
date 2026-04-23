@@ -17,11 +17,9 @@ scale = Vector2( 0.375, 2.5 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
 modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]

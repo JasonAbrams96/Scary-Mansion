@@ -18,10 +18,12 @@ export(Type) var my_type
 func add_to_stack(amount_to_add):
 	if stack_max != 0:
 		if amount_in_stack + amount_to_add > stack_max:
-			#Create a method that combines the stacks if there is an over amount
-			return false
+			var leftover = abs((amount_in_stack + amount_to_add) - stack_max)
+			amount_in_stack = stack_max
+			return leftover
 		else:
 			amount_in_stack += amount_to_add
-			return true
+			return 0
 			
-	return false
+	return -1
+	
