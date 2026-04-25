@@ -6,6 +6,12 @@ var current_room_num = 0
 var prev_room_num = 0
 var next_room_num = 784
 
+
+
+func _init():
+	var gm = GenMap.new()
+	
+
 func _process(delta):
 	if int($Player.global_position.x) > next_room_num:
 		the_camera.position.x += room_size

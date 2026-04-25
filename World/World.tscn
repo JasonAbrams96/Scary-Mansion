@@ -45,6 +45,36 @@ position = Vector2( 728, 168 )
 [node name="1Wall8" parent="Walls" instance=ExtResource( 3 )]
 position = Vector2( 840, 168 )
 
+[node name="Walls2" type="Node2D" parent="."]
+position = Vector2( 896, -56 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="1Wall" parent="Walls2" instance=ExtResource( 3 )]
+position = Vector2( 56, 168 )
+
+[node name="1Wall2" parent="Walls2" instance=ExtResource( 3 )]
+position = Vector2( 168, 168 )
+
+[node name="1Wall3" parent="Walls2" instance=ExtResource( 3 )]
+position = Vector2( 280, 168 )
+
+[node name="1Wall4" parent="Walls2" instance=ExtResource( 3 )]
+position = Vector2( 392, 168 )
+
+[node name="1Wall5" parent="Walls2" instance=ExtResource( 3 )]
+position = Vector2( 504, 168 )
+
+[node name="1Wall6" parent="Walls2" instance=ExtResource( 3 )]
+position = Vector2( 616, 168 )
+
+[node name="1Wall7" parent="Walls2" instance=ExtResource( 3 )]
+position = Vector2( 728, 168 )
+
+[node name="1Wall8" parent="Walls2" instance=ExtResource( 3 )]
+position = Vector2( 840, 168 )
+
 [node name="BehindPlayer" type="Node2D" parent="."]
 position = Vector2( 920, 240 )
 
@@ -102,4 +132,34 @@ position = Vector2( 560, 280 )
 position = Vector2( 672, 280 )
 
 [node name="StaticBody2D8" parent="InFrontPlayer/Floor" instance=ExtResource( 1 )]
+position = Vector2( 784, 280 )
+
+[node name="Floor2" type="Node2D" parent="InFrontPlayer"]
+position = Vector2( 896, -64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" parent="InFrontPlayer/Floor2" instance=ExtResource( 1 )]
+position = Vector2( 0, 280 )
+
+[node name="StaticBody2D2" parent="InFrontPlayer/Floor2" instance=ExtResource( 1 )]
+position = Vector2( 112, 280 )
+
+[node name="StaticBody2D3" parent="InFrontPlayer/Floor2" instance=ExtResource( 1 )]
+position = Vector2( 224, 280 )
+
+[node name="StaticBody2D4" parent="InFrontPlayer/Floor2" instance=ExtResource( 1 )]
+position = Vector2( 336, 280 )
+
+[node name="StaticBody2D5" parent="InFrontPlayer/Floor2" instance=ExtResource( 1 )]
+position = Vector2( 448, 280 )
+
+[node name="StaticBody2D6" parent="InFrontPlayer/Floor2" instance=ExtResource( 1 )]
+position = Vector2( 560, 280 )
+
+[node name="StaticBody2D7" parent="InFrontPlayer/Floor2" instance=ExtResource( 1 )]
+position = Vector2( 672, 280 )
+
+[node name="StaticBody2D8" parent="InFrontPlayer/Floor2" instance=ExtResource( 1 )]
 position = Vector2( 784, 280 )

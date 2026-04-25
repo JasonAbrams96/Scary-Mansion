@@ -28,7 +28,7 @@ text = "Duh Hello"
 autowrap = true
 
 [node name="Timer" type="Timer" parent="LabelMessage"]
-wait_time = 0.05
+wait_time = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 9 )

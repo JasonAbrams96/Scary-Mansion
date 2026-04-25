@@ -1,8 +1,10 @@
-extends Node2D
+class_name GenMap
 
 var map = []
 var width = 5
-var height = 5
+var height = 8
+
+#	Height then width
 
 var glob = Global
 var dict = {"a":"Foyer",
@@ -13,9 +15,9 @@ var dict = {"a":"Foyer",
 			}
 
 func init_map():
-	for i in range(width):
+	for i in range(height):
 		map.append([])
-		for j in range(height):
+		for j in range(width):
 			map[i].append("-")
 			
 
@@ -54,19 +56,19 @@ func gen_map_stairs():
 				
 func gen_power_room():
 	while(true):
-		var x = width
-		var y = height
-		#Generate a power room anywhere on map as long as it is on a normal room
+	#	as long as the room is Normal and is either on the (0,y) or (x, y) sides
+	#	locked room needs a key
+		pass
 		
 		
-func _ready():
+func _init():
 	init_map()
 	gen_map_normals()
 	gen_map_stairs()
 	
 	var string_builder = ""
-	for i in range(width):
-		for j in range(height):
+	for i in range(height):
+		for j in range(width):
 			string_builder += dict[map[i][j]] + " - "
 		string_builder += "\n"
 	

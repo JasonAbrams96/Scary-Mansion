@@ -72,11 +72,11 @@ number = 2
 position = Vector2( 672, 152 )
 number = 3
 
-[node name="Wall Torch" parent="MetalBarInsert4" instance=ExtResource( 6 )]
-position = Vector2( -96, -24 )
+[node name="Wall Torch" parent="." instance=ExtResource( 6 )]
+position = Vector2( 576, 128 )
 
-[node name="Wall Torch2" parent="MetalBarInsert4" instance=ExtResource( 6 )]
-position = Vector2( -456, -24 )
+[node name="Wall Torch2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 216, 128 )
 
-[node name="Wall Torch3" parent="MetalBarInsert4" instance=ExtResource( 6 )]
-position = Vector2( -280, -24 )
+[node name="Wall Torch3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 392, 128 )
