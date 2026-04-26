@@ -18,8 +18,19 @@ shader_param/vignette_rgb = Color( 0, 0, 0, 1 )
 [node name="Camera2D" type="Camera2D"]
 material = SubResource( 1 )
 position = Vector2( 392, 112 )
+z_index = 1
 current = true
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 184.0 ]
+}
+
+[node name="TopColorRect" type="ColorRect" parent="."]
+margin_left = -392.0
+margin_top = -360.0
+margin_right = 400.0
+margin_bottom = -112.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource( 2 )
@@ -27,15 +38,9 @@ margin_left = -392.0
 margin_top = -112.0
 margin_right = 392.0
 margin_bottom = 112.0
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = -392.0
-margin_top = -360.0
-margin_right = 400.0
-margin_bottom = -112.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="BottomColorRect" type="ColorRect" parent="."]
 margin_left = -392.0
 margin_top = 112.0
 margin_right = 400.0

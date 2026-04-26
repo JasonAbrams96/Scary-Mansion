@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Map/RoomAssets1/2Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Map/RoomAssets1/1Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Map/Rooms/Starircase Room Up.gd" type="Script" id=3]
 [ext_resource path="res://Map/RoomAssets1/3Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Map/RoomAssets1/Staircase.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=6]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 68, 52 )
+
 [node name="Starircase Room Up" type="Node2D"]
-__meta__ = {
-"_edit_horizontal_guides_": [ 224.0, 288.0 ]
-}
+script = ExtResource( 3 )
 
 [node name="1Wall" parent="." instance=ExtResource( 2 )]
 position = Vector2( 56, 112 )
@@ -61,3 +63,16 @@ position = Vector2( 560, 0 )
 
 [node name="Floor6" parent="Floor" instance=ExtResource( 6 )]
 position = Vector2( 672, 0 )
+
+[node name="AreaUp" type="Area2D" parent="."]
+position = Vector2( 56, 112 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaUp"]
+position = Vector2( 196, 60 )
+shape = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 192, 168 )
+
+[connection signal="body_entered" from="AreaUp" to="." method="_on_AreaUp_body_entered"]
+[connection signal="body_exited" from="AreaUp" to="." method="_on_AreaUp_body_exited"]

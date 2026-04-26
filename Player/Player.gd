@@ -10,6 +10,7 @@ var my_speed = speed
 var message_to_display = ""
 var displaying_message = false
 
+var y_changed = false
 
 func _ready():
 	Global.player = self
