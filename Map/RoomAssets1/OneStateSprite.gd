@@ -26,6 +26,7 @@ func set_contents(item):
 		contents = rnd_item
 	else:
 		contents = item
+		
 func player_hands_checked():
 	if (Global.player_left_hand_item_id == GlobalItems.items_names["crowbar"]):
 		return true
