@@ -5,7 +5,7 @@ var correct_book:Item = null
 var player_inside_area = false
 var contents = null
 var book_set = false
-var is_regular_bookcase = true
+export var is_regular_bookcase = true
 var message = ""
 
 func _ready():
@@ -27,10 +27,13 @@ func _ready():
 func _process(delta):
 	if player_inside_area:
 		if Input.is_action_just_pressed("Interact"):
-			if !check_hands():
-				Global.player.display_message(message)
+			if !is_regular_bookcase:
+				if !check_hands():
+					Global.player.display_message(message)
+				else:
+					Global.player.display_message("I used the %s. I heard a cachunk." % correct_book.my_name)
 			else:
-				Global.player.display_message("I used the %s. I heard a cachunk." % correct_book.my_name)
+				Global.player.display_message(message)
 
 #Player enters the bookshelf area
 func _on_Bookcase_body_entered(body):

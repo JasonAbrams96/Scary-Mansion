@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Map/RoomAssets1/1Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Map/RoomAssets1/2Wall.tscn" type="PackedScene" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Map/RoomAssets1/Metal Bar Interaction.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Map/RoomAssets1/Wall Torch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Map/Rooms/Breaker Room.gd" type="Script" id=7]
 
 [node name="Breaker Room" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="1Wall" parent="." instance=ExtResource( 1 )]
 position = Vector2( 56, 112 )
@@ -57,18 +59,18 @@ position = Vector2( 560, 0 )
 [node name="Floor6" parent="Floor" instance=ExtResource( 4 )]
 position = Vector2( 672, 0 )
 
-[node name="MetalBarInsert" parent="." instance=ExtResource( 5 )]
+[node name="GreenBreaker" parent="." instance=ExtResource( 5 )]
 position = Vector2( 128, 152 )
 
-[node name="MetalBarInsert2" parent="." instance=ExtResource( 5 )]
+[node name="BlueBreaker" parent="." instance=ExtResource( 5 )]
 position = Vector2( 304, 152 )
 number = 1
 
-[node name="MetalBarInsert3" parent="." instance=ExtResource( 5 )]
+[node name="RedBreaker" parent="." instance=ExtResource( 5 )]
 position = Vector2( 488, 152 )
 number = 2
 
-[node name="MetalBarInsert4" parent="." instance=ExtResource( 5 )]
+[node name="YellowBreaker" parent="." instance=ExtResource( 5 )]
 position = Vector2( 672, 152 )
 number = 3
 

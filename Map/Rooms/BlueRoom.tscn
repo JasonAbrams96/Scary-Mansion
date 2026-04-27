@@ -6,7 +6,7 @@
 [ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Map/RoomAssets1/1Wall.tscn" type="PackedScene" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="BlueRoom" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 784.0

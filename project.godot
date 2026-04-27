@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Map/RoomAssets1/OneStateSprite.gd"
 }, {
+"base": "Node2D",
+"class": "PoweredRoom",
+"language": "GDScript",
+"path": "res://Map/Rooms/PoweredRoom.gd"
+}, {
 "base": "Button",
 "class": "PressableButton",
 "language": "GDScript",
@@ -39,6 +44,7 @@ _global_script_class_icons={
 "GenMap": "",
 "Item": "",
 "OneState": "",
+"PoweredRoom": "",
 "PressableButton": ""
 }
 
@@ -50,7 +56,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GlobalItems="*res://Map/RoomAssets1/GlobalItems.gd"
+GlobalItems="*res://GlobalItems.gd"
 Global="*res://Global.gd"
 GlobalAssets="*res://GlobalAssets.gd"
 MapGeneration="*res://World/MapGeneration.gd"

@@ -97,6 +97,7 @@ func _ready():
 	inventory_add_item_by_id(GlobalItems.items_names["crowbar"])
 	inventory_add_item_by_id(GlobalItems.items_names["crowbar"])
 	inventory_add_item_by_id(GlobalItems.items_names["ammo"])
+	inventory_add_item_by_id(GlobalItems.items_names["metal bar"])
 
 func _process(delta):
 	pass
