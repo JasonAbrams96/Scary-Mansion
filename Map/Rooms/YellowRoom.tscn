@@ -9,11 +9,17 @@
 
 [node name="YellowRoom" type="Node2D"]
 script = ExtResource( 6 )
+color_rect_path = NodePath("Darkness")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 784.0
 margin_bottom = 216.0
 color = Color( 1, 1, 0, 0.176471 )
+
+[node name="Darkness" type="ColorRect" parent="."]
+margin_right = 784.0
+margin_bottom = 216.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="1Wall" parent="." instance=ExtResource( 4 )]
 position = Vector2( 56, 112 )
@@ -63,14 +69,16 @@ position = Vector2( 560, 0 )
 [node name="Floor6" parent="Floor" instance=ExtResource( 1 )]
 position = Vector2( 672, 0 )
 
-[node name="CeilingLight" parent="." instance=ExtResource( 3 )]
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="CeilingLight" parent="Lights" instance=ExtResource( 3 )]
 position = Vector2( 192, 40 )
 
-[node name="CeilingLight2" parent="." instance=ExtResource( 3 )]
+[node name="CeilingLight2" parent="Lights" instance=ExtResource( 3 )]
 position = Vector2( 352, 40 )
 
-[node name="CeilingLight3" parent="." instance=ExtResource( 3 )]
+[node name="CeilingLight3" parent="Lights" instance=ExtResource( 3 )]
 position = Vector2( 480, 40 )
 
-[node name="CeilingLight4" parent="." instance=ExtResource( 3 )]
+[node name="CeilingLight4" parent="Lights" instance=ExtResource( 3 )]
 position = Vector2( 632, 40 )

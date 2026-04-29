@@ -33,6 +33,8 @@ func change(is_damaged):
 			elif !is_damaged:
 				self.frame = 0
 
+func _light_get_color_rect():
+	return get_node("ColorRect")
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):

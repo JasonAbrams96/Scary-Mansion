@@ -5,7 +5,8 @@ var has_red_gem = false
 var has_blue_gem = false
 var is_in_area = false
 
-var contents = null
+var contents:Item = null
+var message = ""
 
 
 func _process(delta):
@@ -27,11 +28,12 @@ func _process(delta):
 				
 				if is_opened:
 					if Global.inventory_add_item_by_id(contents.my_id):
-						#Display message that it added TODO
+						message = "{0}, was added to the inventory!" % contents.my_name
 						pass
 					else:
-						#Display message that it did not add
+						message = "Inventory full, cannot add the {0} to my bag." % contents.my_name
 						pass
+					Global.player.display_message(message)
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):

@@ -52,6 +52,7 @@ hframes = 2
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 2 )
 margin_left = -48.0
 margin_right = 48.0

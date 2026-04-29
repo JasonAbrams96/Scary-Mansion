@@ -90,45 +90,51 @@ position = Vector2( -360, -48 )
 [node name="PuzzleBox" parent="BehindPlayer" instance=ExtResource( 7 )]
 position = Vector2( 40, -112 )
 
-[node name="Staircase Room Down" parent="." instance=ExtResource( 9 )]
-position = Vector2( -784, 0 )
+[node name="Staircase Room Down" parent="BehindPlayer" instance=ExtResource( 9 )]
+position = Vector2( -1704, -240 )
 room = NodePath("../Starircase Room Up")
 
-[node name="Starircase Room Up" parent="." instance=ExtResource( 12 )]
-position = Vector2( -784, 224 )
+[node name="Starircase Room Up" parent="BehindPlayer" instance=ExtResource( 12 )]
+position = Vector2( -1704, -16 )
 room = NodePath("../Staircase Room Down")
 
-[node name="Staircase Room Down2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2352, -224 )
+[node name="Staircase Room Down2" parent="BehindPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1432, -464 )
 room = NodePath("../Starircase Room Up2")
 
-[node name="Staircase Room Down3" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1568, -448 )
+[node name="Staircase Room Down3" parent="BehindPlayer" instance=ExtResource( 9 )]
+position = Vector2( -2488, -688 )
 room = NodePath("../Starircase Room Up2")
 
-[node name="Starircase Room Up2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 2352, 0 )
+[node name="Starircase Room Up2" parent="BehindPlayer" instance=ExtResource( 12 )]
+position = Vector2( 1432, -240 )
 room = NodePath("../Staircase Room Down2")
 
-[node name="Starircase Room Up3" parent="." instance=ExtResource( 12 )]
-position = Vector2( -1568, -224 )
+[node name="Starircase Room Up3" parent="BehindPlayer" instance=ExtResource( 12 )]
+position = Vector2( -2488, -464 )
 room = NodePath("../Staircase Room Down2")
 
-[node name="Breaker Room" parent="." instance=ExtResource( 15 )]
-position = Vector2( 1568, 0 )
+[node name="Breaker Room" parent="BehindPlayer" instance=ExtResource( 15 )]
+position = Vector2( 648, -240 )
 g_room = NodePath("../GreenRoom")
 r_room = NodePath("../RedRoom")
 y_room = NodePath("../YellowRoom")
 b_room = NodePath("../BlueRoom")
 
-[node name="GreenRoom" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1568, -224 )
+[node name="GreenRoom" parent="BehindPlayer" instance=ExtResource( 13 )]
+position = Vector2( 648, -464 )
 
-[node name="RedRoom" parent="." instance=ExtResource( 14 )]
-position = Vector2( 784, -224 )
+[node name="RedRoom" parent="BehindPlayer" instance=ExtResource( 14 )]
+position = Vector2( -136, -464 )
 
-[node name="Foyer" parent="." instance=ExtResource( 10 )]
-position = Vector2( -1568, 0 )
+[node name="BlueRoom" parent="BehindPlayer" instance=ExtResource( 16 )]
+position = Vector2( -920, -464 )
+
+[node name="YellowRoom" parent="BehindPlayer" instance=ExtResource( 17 )]
+position = Vector2( -1704, -464 )
+
+[node name="Foyer" parent="BehindPlayer" instance=ExtResource( 10 )]
+position = Vector2( -2488, -240 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
 
@@ -190,9 +196,3 @@ position = Vector2( 560, 280 )
 
 [node name="StaticBody2D7" parent="InFrontPlayer/Floor2" instance=ExtResource( 1 )]
 position = Vector2( 672, 280 )
-
-[node name="BlueRoom" parent="." instance=ExtResource( 16 )]
-position = Vector2( 0, -224 )
-
-[node name="YellowRoom" parent="." instance=ExtResource( 17 )]
-position = Vector2( -784, -224 )
