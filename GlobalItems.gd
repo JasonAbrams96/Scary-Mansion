@@ -1,6 +1,6 @@
 extends Node
 
-signal update_hands(r_or_l, texture)
+signal update_hands(r_or_l, texture, item_array_location)
 
 var items = {} # a dictionary used to lookup items by id
 var items_names = {} # 	A dict to find id number using the name of the item to look up

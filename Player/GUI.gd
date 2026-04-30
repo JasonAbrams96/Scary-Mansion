@@ -44,13 +44,12 @@ func update_sanity(new_sanity):
 #	elif new_sanity >= 0:
 #		$Panel/SanityTexture.texture.region.position.x = 320
 
-func update_holding_item(r_or_l, texture):
+func update_holding_item(r_or_l, texture, item_array_location):
 	#If 0 for r_or_l then it is RIGHT:
 	if r_or_l == 0:
-		if texture == null:
-			$Panel2/RIghtHandTexture
-			pass
+		Global.player_right_hand_item_id
 		$Panel2/RIghtHandTexture.texture = texture
+		
 	
 	#If 1 for r_or_l then it is LFET:
 	elif r_or_l == 1:

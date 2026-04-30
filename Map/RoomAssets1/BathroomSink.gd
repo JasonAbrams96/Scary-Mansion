@@ -1,0 +1,33 @@
+extends Damagable
+
+var locked = false
+var in_area = false
+var item_to_give_id= -1
+var message = ""
+var item_name_to_unlock = ""
+
+func set_item(item_id):
+	item_to_give_id = item_id
+	
+func _Area2D_on_body_entered(body):
+	if body.is_in_group("player"):
+		in_area = true
+
+func _Area2D_on_body_exited(body):
+	if body.is_in_group("player"):
+		in_area = false
+
+
+func _process(delta):
+	
+	if in_area and Input.is_action_just_pressed("Interact"):
+		if locked and item_name_to_unlock != "" :
+			#check for key in hands
+			var i_id = GlobalItems.items_names[item_name_to_unlock]
+			if i_id == Global.player_left_hand_item_id:
+				pass
+			elif i_id == Global.player_right_hand_item_id:
+				pass
+			
+		else:
+			message = "There is nothing under the sink."

@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Images/Player/Playerpng.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Player/GUI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ShaderMaterial" id=3]
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Assets/manaspc.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 13
+font_data = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9, 39 )
@@ -24,6 +31,7 @@ margin_left = -104.0
 margin_top = -104.0
 margin_right = 112.0
 margin_bottom = -40.0
+custom_fonts/font = SubResource( 5 )
 text = "Duh Hello"
 autowrap = true
 

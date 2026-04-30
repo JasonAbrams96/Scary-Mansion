@@ -5,15 +5,26 @@ var has_knob = false
 func _ready():
 	pass
 	
+func _update_sprite():
+	has_knob = true
+	$".".frame = 0
+
 
 func _process(delta):
 	if in_area and Input.is_action_just_pressed("Interact"):
-		if !has_knob and Global.inventory_has_item("toliet knob"):
-			var i = Global.inventory_remove_item("toliet knob", 1)
-			has_knob = true
+		if !has_knob:
+			var k_id = GlobalItems.item_names["knob"]
+			if Global.player_left_hand_item_id == k_id:
+				Global.player.display_message("Knob Used")
+				GlobalItems.emit_signal("update_hands", 1, null)
+				_update_sprite()
+			elif Global.player_right_hand_item_id == k_id:
+				Global.player.display_message("Knob used")
+				GlobalItems.emit_signal("update_hands", 0, null)
+				_update_sprite()
 			
-		if has_knob:
-			Global.
+		elif has_knob:
+			Global.player.display_message("Flush weeeeeee")
 			
 
 func _on_Area2D_body_entered(body):
