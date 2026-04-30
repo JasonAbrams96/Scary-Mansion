@@ -9,9 +9,9 @@ func can_drop_data(position, data):
 	
 	if self.texture != null:
 		if data['item spot'].is_left_hand:
-			GlobalItems.emit_signal("update_hands", 1, data['origin texture'])
+			GlobalItems.emit_signal("update_hands", 1, data['origin texture'], data['item spot'].inventory_slot_number)
 		elif data['item spot'].is_right_hand:
-			GlobalItems.emit_signal("update_hands", 0, data['origin texture'])
+			GlobalItems.emit_signal("update_hands", 0, data['origin texture'], data['item spot'].inventory_slot_number)
 		return false
 #	elif self.texture == data['origin texture']:
 #		print("textures are the same")
@@ -57,30 +57,34 @@ func drop_data(position, data):
 	if my_p.is_left_hand or my_p.is_right_hand:
 		if my_p.is_left_hand:
 			Global.player_left_hand_item_id = data['item spot'].item_num
-			GlobalItems.emit_signal("update_hands", 1, texture)
+			Global.player_left_hand_item_inventory_local = data['item spot'].inventory_slot_number
+			GlobalItems.emit_signal("update_hands", 1, texture, data['item spot'].inventory_slot_number)
 			Global.inventory[data['item spot'].inventory_slot_number].item_slot_local = -11
 			
 			if data['item spot'].is_right_hand: # This is set the prev spot texture to no pic when moving
 				#	from left to right hand in the GUI
-				GlobalItems.emit_signal("update_hands", 0, null)
+				GlobalItems.emit_signal("update_hands", 0, null, data['item spot'].inventory_slot_number)
 		elif my_p.is_right_hand:
 			Global.player_right_hand_item_id = data['item spot'].item_num
-			GlobalItems.emit_signal("update_hands", 0, texture)
+			Global.player_right_hand_item_inventory_local = data['item spot'].inventory_slot_number
+			GlobalItems.emit_signal("update_hands", 0, texture, data['item spot'].inventory_slot_number)
 			Global.inventory[data['item spot'].inventory_slot_number].item_slot_local = -10
 			if data['item spot'].is_left_hand:	#This is set the prev spot texture to no pic when moving
 				#	from right to left hand in the GUI
-				GlobalItems.emit_signal("update_hands", 1, null)
+				GlobalItems.emit_signal("update_hands", 1, null, data['item spot'].inventory_slot_number)
 				
 	else:
 		#This is for when the player moves an item from their hand slot to their inventory, to update
 		#	the GUI hand spaces
 		if data['item spot'].is_left_hand:
 			Global.player_left_hand_item_id = -1
-			GlobalItems.emit_signal("update_hands", 1, null)
+			Global.player_left_hand_item_inventory_local = -1
+			GlobalItems.emit_signal("update_hands", 1, null, data['item spot'].inventory_slot_number)
 			Global.inventory[data['item spot'].inventory_slot_number].item_slot_local = my_p.slot_num
 		elif data['item spot'].is_right_hand:
 			Global.player_right_hand_item_id = -1
-			GlobalItems.emit_signal("update_hands", 0, null)
+			Global.player_right_hand_item_inventory_local = -1
+			GlobalItems.emit_signal("update_hands", 0, null, data['item spot'].inventory_slot_number)
 			Global.inventory[data['item spot'].inventory_slot_number].item_slot_local = my_p.slot_num
 			
 		elif my_p.is_trash_slot:

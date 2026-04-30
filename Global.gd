@@ -31,6 +31,8 @@ var environment_is_changed = false
 
 var player_left_hand_item_id = -1
 var player_right_hand_item_id = -1
+var player_left_hand_item_inventory_local = -1
+var player_right_hand_item_inventory_local = -1
 var player = null
 
 var rng
@@ -87,10 +89,6 @@ func _ready():
 	rng.seed = game_seed
 	
 	#TESTING, REMOVE AFFTER WORKING
-	inventory.push_back(GlobalItems.items[0].duplicate())
-	inventory.push_back(GlobalItems.items[2].duplicate())
-	inventory.push_back(GlobalItems.items[1].duplicate())
-	inventory.push_back(GlobalItems.items[6].duplicate())
 	inventory_add_item_by_id(GlobalItems.items_names["colored rocks"])
 	inventory_add_item_by_id(GlobalItems.items_names["colored rocks"])
 	inventory_add_item_by_id(GlobalItems.items_names["colored rocks"])
@@ -139,6 +137,8 @@ func inventory_has_item(name_to_find:String) -> bool:
 	
 func inventory_delete_item(inventory_number:int):
 	inventory.remove(inventory_number)
+	for i in range(inventory.size()):
+		inventory[i].inven_array_local = i
 	
 func inventory_remove_item(name_to_return:String, amount:int) -> Item:
 	#find item
@@ -179,10 +179,16 @@ func inventory_add_item_by_id(item_id):
 				if leftover > 0:
 					var extra_item = GlobalItems.items[item_id].duplicate()
 					extra_item.amount_in_stack = leftover
+					extra_item.inven_array_local = inventory.size() - 1
 					inventory.push_back(extra_item)
 				return true
+		item_to_add.inven_array_local = inventory.size()-1
 		inventory.push_back(item_to_add)
 		return true
 	else:
 		return false
 	
+func decrement_item_inventory_stack_1(place):
+	inventory[place].amount_in_stack -= 1
+	if inventory[place].amount_in_stack == 0:
+		inventory_delete_item(place)

@@ -22,6 +22,7 @@ atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 32 )
 
 [node name="GUI" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 3 )
 
 [node name="Panel" type="Panel" parent="."]
