@@ -1,49 +1,66 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Map/RoomAssets1/1Wall.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Map/RoomAssets1/3Wall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Map/RoomAssets1/2Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Map/RoomAssets1/TileWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Map/RoomAssets1/Toliet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Map/RoomAssets1/Wall Torch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Map/RoomAssets1/BathroomSink.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Map/RoomAssets1/BathroomShelf.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Map/RoomAssets1/Chanduler.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Map/RoomAssets1/Dryer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Map/RoomAssets1/Washer.tscn" type="PackedScene" id=11]
 
 [node name="Bathroom" type="Node2D"]
+
+[node name="TiledWall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 112 )
+
+[node name="TiledWall2" parent="TiledWall" instance=ExtResource( 1 )]
+position = Vector2( 112, 0 )
+
+[node name="TiledWall3" parent="TiledWall" instance=ExtResource( 1 )]
+position = Vector2( 224, 0 )
+
+[node name="TiledWall4" parent="TiledWall" instance=ExtResource( 1 )]
+position = Vector2( 336, 0 )
+
+[node name="TiledWall5" parent="TiledWall" instance=ExtResource( 1 )]
+position = Vector2( 448, 0 )
+
+[node name="TiledWall7" parent="TiledWall" instance=ExtResource( 1 )]
+position = Vector2( 560, 0 )
+
+[node name="TiledWall6" parent="TiledWall" instance=ExtResource( 1 )]
+position = Vector2( 672, 0 )
 
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Toliet" parent="Interactables" instance=ExtResource( 5 )]
-position = Vector2( 128, 160 )
+position = Vector2( 272, 176 )
 
 [node name="BathroomSink" parent="Interactables" instance=ExtResource( 7 )]
-position = Vector2( 264, 216 )
+position = Vector2( 344, 216 )
 
-[node name="Wall Torch" parent="." instance=ExtResource( 6 )]
-position = Vector2( 256, 96 )
-
-[node name="1Wall" parent="." instance=ExtResource( 1 )]
-position = Vector2( 56, 112 )
+[node name="BathroomShelf" parent="Interactables" instance=ExtResource( 8 )]
+position = Vector2( 48, 160 )
 __meta__ = {
-"_edit_group_": true
+"_edit_horizontal_guides_": [ 48.0 ]
 }
 
-[node name="2Wall" parent="1Wall" instance=ExtResource( 3 )]
-position = Vector2( 112, 0 )
+[node name="Dryer" parent="Interactables" instance=ExtResource( 10 )]
+position = Vector2( 496, 192 )
 
-[node name="2Wall2" parent="1Wall" instance=ExtResource( 3 )]
-position = Vector2( 224, 0 )
+[node name="Washer" parent="Interactables" instance=ExtResource( 11 )]
+position = Vector2( 560, 192 )
 
-[node name="1Wall" parent="1Wall" instance=ExtResource( 1 )]
-position = Vector2( 336, 0 )
+[node name="Wall Torch" parent="." instance=ExtResource( 6 )]
+position = Vector2( 200, 112 )
 
-[node name="1Wall2" parent="1Wall" instance=ExtResource( 1 )]
-position = Vector2( 672, 0 )
+[node name="Wall Torch2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 640, 112 )
 
-[node name="2Wall3" parent="1Wall" instance=ExtResource( 2 )]
-position = Vector2( 448, 0 )
-
-[node name="2Wall4" parent="1Wall" instance=ExtResource( 2 )]
-position = Vector2( 560, 0 )
+[node name="Chanuler" parent="." instance=ExtResource( 9 )]
+position = Vector2( 432, 40 )
 
 [node name="Floor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 216 )

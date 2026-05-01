@@ -4,6 +4,8 @@ class_name Damagable
 var my_frame = -1
 
 export var is_interactable = false
+export var message = ""
+
 var contents = null
 var contents_got = false
 var is_player_in_area = false
@@ -13,9 +15,10 @@ func _ready():
 
 func _process(delta):
 	if !contents_got and is_player_in_area and Input.is_action_just_pressed("Interact"):
-		if contents_got == false:
+		if contents_got == false and contents != null:
 			Global.inventory_add_item(contents)
 			contents_got = true
+	
 			
 func change(is_damaged):
 	if hframes <= 2:

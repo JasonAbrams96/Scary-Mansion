@@ -105,7 +105,7 @@ room = NodePath("../Starircase Room Up2")
 
 [node name="Staircase Room Down3" parent="BehindPlayer" instance=ExtResource( 9 )]
 position = Vector2( -2488, -688 )
-room = NodePath("../Starircase Room Up2")
+room = NodePath("../Starircase Room Up3")
 
 [node name="Starircase Room Up2" parent="BehindPlayer" instance=ExtResource( 12 )]
 position = Vector2( 1432, -240 )
@@ -113,7 +113,7 @@ room = NodePath("../Staircase Room Down2")
 
 [node name="Starircase Room Up3" parent="BehindPlayer" instance=ExtResource( 12 )]
 position = Vector2( -2488, -464 )
-room = NodePath("../Staircase Room Down2")
+room = NodePath("../Staircase Room Down3")
 
 [node name="Breaker Room" parent="BehindPlayer" instance=ExtResource( 15 )]
 position = Vector2( 648, -240 )

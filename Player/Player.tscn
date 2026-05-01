@@ -7,10 +7,13 @@
 [sub_resource type="ShaderMaterial" id=3]
 
 [sub_resource type="DynamicFontData" id=4]
+antialiased = false
 font_path = "res://Assets/manaspc.ttf"
 
 [sub_resource type="DynamicFont" id=5]
-size = 13
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=1]

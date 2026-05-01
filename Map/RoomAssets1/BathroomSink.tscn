@@ -3,8 +3,9 @@
 [ext_resource path="res://Assets/Images/House/BathroomSink_sheet.png" type="Texture" id=1]
 [ext_resource path="res://Map/RoomAssets1/BathroomSink.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 44.0
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 16.0
+height = 68.0
 
 [node name="BathroomSink" type="Sprite"]
 texture = ExtResource( 1 )
