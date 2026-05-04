@@ -7,7 +7,7 @@ export var is_interactable = false
 export var message = ""
 
 var contents = null
-var contents_got = false
+export var contents_got = false
 var is_player_in_area = false
 
 func _ready():
@@ -18,7 +18,8 @@ func _process(delta):
 		if contents_got == false and contents != null:
 			Global.inventory_add_item(contents)
 			contents_got = true
-	
+		else:
+			Global.player.display_message("I don't think there is anything useful here.")
 			
 func change(is_damaged):
 	if hframes <= 2:

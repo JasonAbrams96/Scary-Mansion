@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Map/RoomAssets1/TileWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Images/House/Magazine Basket.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/House/Toliet Tissue.png" type="Texture" id=3]
 [ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Map/RoomAssets1/Toliet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Map/RoomAssets1/Wall Torch.tscn" type="PackedScene" id=6]
@@ -9,6 +11,8 @@
 [ext_resource path="res://Map/RoomAssets1/Chanduler.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Map/RoomAssets1/Dryer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Map/RoomAssets1/Washer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Map/RoomAssets1/Shower.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Images/House/Rug1.png" type="Texture" id=13]
 
 [node name="Bathroom" type="Node2D"]
 
@@ -36,7 +40,18 @@ position = Vector2( 672, 0 )
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Toliet" parent="Interactables" instance=ExtResource( 5 )]
-position = Vector2( 272, 176 )
+position = Vector2( 248, 176 )
+
+[node name="MagazineBasket" type="Sprite" parent="Interactables/Toliet"]
+position = Vector2( -42.6667, 32 )
+scale = Vector2( 1.33333, 1.33333 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, 1.5 )
+
+[node name="TolietTissue" type="Sprite" parent="Interactables/Toliet"]
+position = Vector2( 32, 10.6667 )
+scale = Vector2( 1.33333, 1.33333 )
+texture = ExtResource( 3 )
 
 [node name="BathroomSink" parent="Interactables" instance=ExtResource( 7 )]
 position = Vector2( 344, 216 )
@@ -53,14 +68,32 @@ position = Vector2( 496, 192 )
 [node name="Washer" parent="Interactables" instance=ExtResource( 11 )]
 position = Vector2( 560, 192 )
 
+[node name="Shower" parent="Interactables" instance=ExtResource( 12 )]
+position = Vector2( 720, 168 )
+
+[node name="Rug1" type="Sprite" parent="Interactables"]
+position = Vector2( 392, 216 )
+scale = Vector2( 0.999997, 0.999997 )
+texture = ExtResource( 13 )
+
+[node name="Rug2" type="Sprite" parent="Interactables"]
+position = Vector2( 296, 216 )
+scale = Vector2( 0.999997, 0.999997 )
+texture = ExtResource( 13 )
+
+[node name="Rug3" type="Sprite" parent="Interactables"]
+position = Vector2( 664, 216 )
+scale = Vector2( 0.999997, 0.999997 )
+texture = ExtResource( 13 )
+
 [node name="Wall Torch" parent="." instance=ExtResource( 6 )]
 position = Vector2( 200, 112 )
 
 [node name="Wall Torch2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 640, 112 )
+position = Vector2( 616, 112 )
 
 [node name="Chanuler" parent="." instance=ExtResource( 9 )]
-position = Vector2( 432, 40 )
+position = Vector2( 392, 40 )
 
 [node name="Floor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 216 )

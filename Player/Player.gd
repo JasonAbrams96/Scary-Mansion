@@ -10,6 +10,8 @@ var my_speed = speed
 var message_to_display = ""
 var displaying_message = false
 
+var lbl_spot_left_face = Vector2(0, -104)
+var lbl_spot_right_face = Vector2(-108, -104)
 var y_changed = false
 
 func _ready():
@@ -34,6 +36,8 @@ func get_input():
 	if Input.is_action_pressed("Left"):
 		if $Sprite.flip_h != true:
 			$Sprite.flip_h = true
+		if $LabelMessage.rect_position == lbl_spot_right_face:
+			$LabelMessage.rect_position = lbl_spot_left_face
 			
 		#This blip changes the direction if there is already movement
 		if motion.x > 0:
@@ -47,6 +51,8 @@ func get_input():
 	elif Input.is_action_pressed("Right"):
 		if $Sprite.flip_h != false:
 			$Sprite.flip_h = false
+		if $LabelMessage.rect_position == lbl_spot_left_face:
+			$LabelMessage.rect_position = lbl_spot_right_face
 		#This blip changes the direction if there is already movement
 		if motion.x < 0:
 			motion.x *= -1

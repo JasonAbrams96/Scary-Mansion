@@ -11,6 +11,7 @@
 
 [node name="1Wall" parent="." instance=ExtResource( 3 )]
 position = Vector2( 56, 112 )
+z_as_relative = false
 __meta__ = {
 "_edit_group_": true
 }

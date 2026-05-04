@@ -83,7 +83,7 @@ position = Vector2( 224, 104 )
 position = Vector2( 392, 104 )
 
 [node name="LockedDoor" parent="." instance=ExtResource( 9 )]
-position = Vector2( 0, 136 )
+position = Vector2( 0, 160 )
 
 [node name="Window" parent="." instance=ExtResource( 10 )]
 position = Vector2( 224, 32 )
