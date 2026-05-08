@@ -8,3 +8,5 @@ Assets/Images/bookcase.aseprite
 *.aseprite
 
 .mono/assemblies/Debug/
+
+.mono/metadata/

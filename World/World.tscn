@@ -81,7 +81,7 @@ position = Vector2( 728, 168 )
 position = Vector2( 920, 240 )
 
 [node name="Outside" parent="BehindPlayer" instance=ExtResource( 19 )]
-position = Vector2( 2272, -128 )
+position = Vector2( 2216, -240 )
 
 [node name="DeskTable" parent="BehindPlayer" instance=ExtResource( 6 )]
 position = Vector2( -24, -24 )
@@ -147,7 +147,7 @@ position = Vector2( -1704, -688 )
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2456, 168 )
+position = Vector2( -944, 168 )
 __meta__ = {
 "_edit_group_": true
 }
