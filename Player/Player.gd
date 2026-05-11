@@ -14,17 +14,7 @@ var lbl_spot_left_face = Vector2(0, -104)
 var lbl_spot_right_face = Vector2(-108, -104)
 var y_changed = false
 
-func _ready():
-	Global.player = self
-	
-	
-func _process(delta):
-	if message_to_display != "" and !displaying_message:
-		displaying_message = true
-		$LabelMessage.text = message_to_display
-		$LabelMessage/Timer.start()
-		
-	
+
 func get_input():
 	
 	if Input.is_action_just_pressed("Shift"):
@@ -68,6 +58,18 @@ func get_input():
 			motion.x -= 40
 		else:
 			motion.x = 0
+	
+	
+func _ready():
+	Global.player = self
+	
+	
+func _process(delta):
+	if message_to_display != "" and !displaying_message:
+		displaying_message = true
+		$LabelMessage.text = message_to_display
+		$LabelMessage/Timer.start()
+		
 			
 			
 func _physics_process(delta):

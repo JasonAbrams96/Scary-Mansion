@@ -32,7 +32,6 @@ margin_top = -104.0
 margin_right = 108.0
 margin_bottom = -40.0
 custom_fonts/font = SubResource( 5 )
-text = "Duh Hello"
 autowrap = true
 
 [node name="Timer" type="Timer" parent="LabelMessage"]
