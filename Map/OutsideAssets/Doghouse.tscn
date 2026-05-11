@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Images/Background/Doghouse.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Background/DogDish.png" type="Texture" id=2]
+[ext_resource path="res://Map/OutsideAssets/Doghouse.gd" type="Script" id=3]
+
+[node name="Doghouse" type="Sprite"]
+texture = ExtResource( 1 )
+hframes = 2
+script = ExtResource( 3 )
+
+[node name="DogBowl" type="Sprite" parent="."]
+position = Vector2( -75, 19 )
+texture = ExtResource( 2 )
+hframes = 2

@@ -16,6 +16,7 @@ signal sanity_changed(new_sanity)
 signal time_updated(new_time)
 signal change_environment(is_negative)
 signal gui_inventory_closed
+signal dog_to_house
 
 var num_of_ghosts = 0
 const max_ghosts = 10

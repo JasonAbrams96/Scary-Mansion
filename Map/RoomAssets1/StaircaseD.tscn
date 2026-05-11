@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Images/House/Stairs_down.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Background/Stairs_down.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Arrow.png" type="Texture" id=2]
 [ext_resource path="res://Map/RoomAssets1/StaircaseD.gd" type="Script" id=3]
 

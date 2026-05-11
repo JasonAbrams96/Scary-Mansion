@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Images/House/torch_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Background/torch_sheet.png" type="Texture" id=1]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.0662824, 0.414986, 0.763689, 0.9683 )

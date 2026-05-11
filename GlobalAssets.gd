@@ -1,12 +1,12 @@
 extends Node
 
 var missing_books_sprites = {
-			"1":preload("res://Assets/Images/House/b_m_book.png"),
-			"2":preload("res://Assets/Images/House/r_m_book.png"),
-			"3":preload("res://Assets/Images/House/p_m_book.png"),
-			"4":preload("res://Assets/Images/House/o_m_book.png"),
-			"5":preload("res://Assets/Images/House/y_m_book.png"),
-			"6":preload("res://Assets/Images/House/g_m_book.png"),
+			"1":preload("res://Assets/Images/Background/b_m_book.png"),
+			"2":preload("res://Assets/Images/Background/r_m_book.png"),
+			"3":preload("res://Assets/Images/Background/p_m_book.png"),
+			"4":preload("res://Assets/Images/Background/o_m_book.png"),
+			"5":preload("res://Assets/Images/Background/y_m_book.png"),
+			"6":preload("res://Assets/Images/Background/g_m_book.png"),
 }
 
 func get_random_book():
