@@ -37,12 +37,12 @@ material = SubResource( 2 )
 margin_left = -392.0
 margin_top = -112.0
 margin_right = 392.0
-margin_bottom = 112.0
+margin_bottom = 110.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="BottomColorRect" type="ColorRect" parent="."]
 margin_left = -392.0
-margin_top = 112.0
+margin_top = 110.0
 margin_right = 400.0
 margin_bottom = 360.0
 color = Color( 0, 0, 0, 1 )

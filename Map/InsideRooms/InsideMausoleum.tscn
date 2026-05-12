@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Images/Background/MausoleumInside.png" type="Texture" id=1]
+[ext_resource path="res://Map/RoomAssets1/LockedSideDoor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+
+[node name="InsideMausoleum" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Floor" parent="Background" instance=ExtResource( 3 )]
+position = Vector2( 0, 216 )
+
+[node name="Floor2" parent="Background/Floor" instance=ExtResource( 3 )]
+position = Vector2( 112, 0 )
+
+[node name="Floor3" parent="Background/Floor" instance=ExtResource( 3 )]
+position = Vector2( 224, 0 )
+
+[node name="Floor4" parent="Background/Floor" instance=ExtResource( 3 )]
+position = Vector2( 336, 0 )
+
+[node name="Floor5" parent="Background/Floor" instance=ExtResource( 3 )]
+position = Vector2( 448, 0 )
+
+[node name="Floor6" parent="Background/Floor" instance=ExtResource( 3 )]
+position = Vector2( 560, 0 )
+
+[node name="Floor7" parent="Background/Floor" instance=ExtResource( 3 )]
+position = Vector2( 672, 0 )
+
+[node name="LockedDoor" parent="Background" instance=ExtResource( 2 )]
+position = Vector2( 8, 160 )
+scene_to_load = "res://World/World.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 40, 168 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 4 )]
+current = false

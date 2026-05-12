@@ -6,6 +6,9 @@ var direction = -1
 var motion = Vector2()
 var body
 var sprite
+
+onready var animation_player = $AnimationPlayer
+
 var fed = false
 enum state {PATROLLING, BARKING, ATTACK, FED}
 var current_state = state.PATROLLING
@@ -27,6 +30,11 @@ func _physics_process(delta):
 	
 	#What the Dog do when it is patrolling
 	if current_state == state.PATROLLING:
+		if animation_player.current_animation != "Walk":
+			animation_player.play("Walk")
+		if direction == 1:
+			sprite.flip_h = true	
+		
 		motion.x = max_speed * delta * direction
 
 		
@@ -39,10 +47,14 @@ func _physics_process(delta):
 			direction = -1
 			sprite.flip_h = false
 	elif current_state == state.BARKING:
+		if animation_player.current_animation != "Bark":
+			animation_player.play("Bark")
 		sprite.flip_h = false
 		#Barks at player to "Warn" them
 		pass
 	elif current_state == state.FED:
+		if animation_player.current_animation != "Walk":
+			animation_player.play("Walk")
 		if body.position.x < 0:
 			motion.x = (max_speed - 1000) * delta
 		elif body.position.x > 0:

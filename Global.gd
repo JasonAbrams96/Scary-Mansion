@@ -40,6 +40,8 @@ var rng
 
 var rendered_rooms = {}
 var unrendered_rooms = {}
+var world_stack = []
+var player_pos_for_world_stack = []
 
 var inventory = []
 var inventory_open = false

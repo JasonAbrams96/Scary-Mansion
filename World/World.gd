@@ -35,3 +35,9 @@ func _process(delta):
 			next_room_y_num -= room_size_y
 			prev_room_y_num -= room_size_y
 		$Player.y_changed = false
+
+
+func _enter_tree():
+	if Global.player_pos_for_world_stack.size() == 1:
+		#most likely loading into this sene, set player Position
+		Global.player.global_position = Global.player_pos_for_world_stack.pop_back()
