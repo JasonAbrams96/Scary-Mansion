@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Map/Rooms/Bathroom.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Map/Outside/Outside.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Map/Rooms/Dining Room.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Map/Rooms/Kitchen.tscn" type="PackedScene" id=21]
 
 [node name="World" type="Node"]
 script = ExtResource( 4 )
@@ -145,8 +146,11 @@ position = Vector2( -2488, -240 )
 [node name="Bathroom" parent="BehindPlayer" instance=ExtResource( 18 )]
 position = Vector2( -1704, -688 )
 
-[node name="DiningRoom" parent="BehindPlayer" instance=ExtResource( 20 )]
+[node name="Kitchen" parent="BehindPlayer" instance=ExtResource( 21 )]
 position = Vector2( -920, -688 )
+
+[node name="DiningRoom" parent="BehindPlayer" instance=ExtResource( 20 )]
+position = Vector2( -136, -688 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
 

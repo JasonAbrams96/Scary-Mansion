@@ -3,10 +3,13 @@ extends Node2D
 #		TODO: make it so the sanity meter can change the things ontop of the table
 var in_area_schair = false
 var item_needed_schair = null
+export var has_special_chair = false
 
 func _ready():
 	item_needed_schair = GlobalItems.items_names["colored rocks"]
-	
+	if !has_special_chair:
+		$SpecialChair.frame = 1
+		$SpecialChair.remove_child($SpecialChair/Area2D)
 	
 func _process(delta):
 	if in_area_schair:
