@@ -11,7 +11,14 @@ var dict = {"a":"Foyer",
 			"b":"Normal_Room",
 			"c":"Up_Room",
 			"d":"Down_Room",
-			"e":"Power_Room"
+			"e":"Power_Room",
+			"f":"Red_Room",
+			"g":"Green_Room",
+			"h":"Yellow_Room",
+			"i":"Blue_Room",
+			"j":"Dining_Room",
+			"k":"Kitchen",
+			"l":"Bathroom"
 			}
 
 func init_map():

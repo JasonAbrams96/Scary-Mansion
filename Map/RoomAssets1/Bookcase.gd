@@ -78,6 +78,7 @@ func set_up_where_book_spawns(array):
 	#Sets the random sprite to 
 	var sprite = Sprite.new()
 	sprite.texture = array[0]
+	sprite.global_position = position_rand.position
 	$Sprite.add_child(sprite)
 	
 	correct_book = array[1]

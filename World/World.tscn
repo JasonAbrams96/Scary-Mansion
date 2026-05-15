@@ -90,6 +90,7 @@ position = Vector2( -24, -24 )
 
 [node name="Bookcase" parent="BehindPlayer" instance=ExtResource( 5 )]
 position = Vector2( -696, -24 )
+is_regular_bookcase = false
 
 [node name="Crate" parent="BehindPlayer" instance=ExtResource( 11 )]
 position = Vector2( -360, -48 )

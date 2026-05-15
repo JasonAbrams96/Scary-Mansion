@@ -12,7 +12,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -69 )
 texture = ExtResource( 1 )
-hframes = 4
+hframes = 5
 frame = 2
 region_rect = Rect2( 0, 0, 114, 137 )
 
