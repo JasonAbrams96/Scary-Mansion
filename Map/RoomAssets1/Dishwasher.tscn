@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Images/Background/dishwasher.png" type="Texture" id=1]
+[ext_resource path="res://Map/RoomAssets1/Dishwasher.gd" type="Script" id=2]
+
+[node name="Dishwasher" type="Sprite"]
+scale = Vector2( 1.15, 1.15 )
+texture = ExtResource( 1 )
+hframes = 2
+script = ExtResource( 2 )
