@@ -70,7 +70,7 @@ position = Vector2( 672, 0 )
 position = Vector2( 64, 96 )
 
 [node name="Position2D2" type="Position2D" parent="Points"]
-position = Vector2( 384, 128 )
+position = Vector2( 320, 104 )
 
 [node name="Position2D3" type="Position2D" parent="Points"]
 position = Vector2( 696, 96 )
@@ -83,6 +83,9 @@ shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 552, 168 )
+
+[node name="DividingWalls" type="Node2D" parent="."]
+position = Vector2( 56, 112 )
 
 [connection signal="body_entered" from="AreaDown" to="." method="_on_AreaDown_body_entered"]
 [connection signal="body_exited" from="AreaDown" to="." method="_on_AreaDown_body_exited"]

@@ -1,11 +1,36 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Images/Background/shelf_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Background/TableWDrawers.png" type="Texture" id=1]
+[ext_resource path="res://Map/RoomAssets1/DeskTable.gd" type="Script" id=2]
 
-[node name="DeskTable" type="Node2D"]
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -80 )
+[node name="DeskTable" type="Sprite"]
 texture = ExtResource( 1 )
-centered = false
-hframes = 5
+offset = Vector2( 89, -40.5 )
+hframes = 2
+script = ExtResource( 2 )
+
+[node name="Positions" type="Node2D" parent="."]
+position = Vector2( 0, 80 )
+
+[node name="Position2D" type="Position2D" parent="Positions"]
+position = Vector2( 20, -132 )
+
+[node name="Position2D2" type="Position2D" parent="Positions"]
+position = Vector2( 87, -132 )
+
+[node name="Position2D3" type="Position2D" parent="Positions"]
+position = Vector2( 138, -132 )
+
+[node name="Position2D4" type="Position2D" parent="Positions"]
+position = Vector2( 47, -108 )
+
+[node name="Position2D5" type="Position2D" parent="Positions"]
+position = Vector2( 123, -108 )
+
+[node name="TopPositions" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="TopPositions"]
+position = Vector2( 47, -80 )
+
+[node name="Position2D2" type="Position2D" parent="TopPositions"]
+position = Vector2( 116, -80 )

@@ -74,3 +74,9 @@ position = Vector2( 368, 112 )
 
 [node name="Window3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 576, 112 )
+
+[node name="DividingWalls" type="Node2D" parent="."]
+
+[node name="GroundPositions" type="Node2D" parent="."]
+
+[node name="WallPositions" type="Node2D" parent="."]

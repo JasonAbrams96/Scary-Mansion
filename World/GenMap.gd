@@ -1,3 +1,4 @@
+extends Node2D
 class_name GenMap
 
 var map = []
@@ -61,17 +62,46 @@ func gen_map_stairs():
 		while(r_up_x == down_x):
 			r_up_x = (randi() % 5)
 				
+				
+func gen_special_rooms():
+	gen_power_room()
+	gen_powered_rooms()
+	
 func gen_power_room():
 	while(true):
+		var rand_x = Global.get_randi() % 2
+		var rand_y = Global.get_randi() % height
+		
+		if rand_x == 1:
+			rand_x = width - 1
+			
+		if map[rand_y][rand_x] == "b":
+			map[rand_y][rand_x] = "e"
+			break
 	#	as long as the room is Normal and is either on the (0,y) or (x, y) sides
 	#	locked room needs a key
 		pass
 		
 		
-func _init():
+func gen_powered_rooms():
+	var p_rooms = ["f", "g", "h", "i"]
+	while(true):
+		var rand_x = Global.get_randi() % width
+		var rand_y = Global.get_randi() % height
+		
+		if map[rand_y][rand_x] == "b":
+			var r =  p_rooms[Global.get_randi() % p_rooms.size()]
+			map[rand_y][rand_x] = r
+			p_rooms.remove(r)
+			
+		if p_rooms.size() == 0:
+			break
+		
+func _ready():
 	init_map()
 	gen_map_normals()
 	gen_map_stairs()
+	gen_special_rooms()
 	
 	var string_builder = ""
 	for i in range(height):

@@ -82,3 +82,5 @@ position = Vector2( 464, 40 )
 
 [node name="CeilingLight4" parent="Lights" instance=ExtResource( 1 )]
 position = Vector2( 608, 40 )
+
+[node name="DividingWalls" type="Node2D" parent="."]

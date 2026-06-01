@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Map/RoomAssets1/Damagables.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "GenMap",
 "language": "GDScript",
 "path": "res://World/GenMap.gd"
@@ -56,10 +56,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
+GlobalAssets="*res://GlobalAssets.gd"
 GlobalItems="*res://GlobalItems.gd"
 Global="*res://Global.gd"
-GlobalAssets="*res://GlobalAssets.gd"
-MapGeneration="*res://World/MapGeneration.gd"
 
 [display]
 

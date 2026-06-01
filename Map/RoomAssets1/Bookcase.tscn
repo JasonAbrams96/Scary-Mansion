@@ -10,14 +10,14 @@ extents = Vector2( 56, 66 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -69 )
+position = Vector2( 57, -69 )
 texture = ExtResource( 1 )
 hframes = 5
 frame = 2
 region_rect = Rect2( 0, 0, 114, 137 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -68 )
+position = Vector2( 57, -68 )
 shape = SubResource( 1 )
 
 [node name="Book_Positions" type="Node2D" parent="."]

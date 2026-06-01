@@ -4,4 +4,5 @@
 
 [node name="Banner1" type="Sprite"]
 texture = ExtResource( 1 )
+offset = Vector2( 0, -39.5 )
 hframes = 2

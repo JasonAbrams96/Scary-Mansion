@@ -3,6 +3,7 @@
 [ext_resource path="res://Map/RoomAssets1/Damagables.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Background/picture3_sheet.png" type="Texture" id=2]
 
+
 [node name="Picture 3" type="Sprite"]
 texture = ExtResource( 2 )
 hframes = 2

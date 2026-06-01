@@ -36,7 +36,7 @@ var player_left_hand_item_inventory_local = -1
 var player_right_hand_item_inventory_local = -1
 var player = null
 
-var rng
+var rng = null
 
 var rendered_rooms = {}
 var unrendered_rooms = {}
@@ -90,7 +90,7 @@ func _ready():
 	#Setting up rng for generation
 	rng = RandomNumberGenerator.new()
 	rng.seed = game_seed
-	
+
 	#TESTING, REMOVE AFFTER WORKING
 	inventory_add_item_by_id(GlobalItems.items_names["colored rocks"])
 	inventory_add_item_by_id(GlobalItems.items_names["colored rocks"])
@@ -195,3 +195,9 @@ func decrement_item_inventory_stack_1(place):
 	inventory[place].amount_in_stack -= 1
 	if inventory[place].amount_in_stack == 0:
 		inventory_delete_item(place)
+		
+func get_randi():
+	return rng.randi()
+	
+func get_randi_range(from, to):
+	return rng.randi_range(from, to)

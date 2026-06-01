@@ -78,4 +78,16 @@ position = Vector2( 192, 104 )
 position = Vector2( 400, 0 )
 
 [node name="DeadTree" parent="." instance=ExtResource( 2 )]
-position = Vector2( 336, 216 )
+position = Vector2( 312, 216 )
+
+[node name="WallPositions" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="WallPositions"]
+position = Vector2( 448, 144 )
+
+[node name="GroundPositions" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="GroundPositions"]
+position = Vector2( 128, 176 )
+
+[node name="DividingWalls" type="Node2D" parent="."]

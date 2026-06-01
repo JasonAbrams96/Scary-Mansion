@@ -74,10 +74,10 @@ position = Vector2( 448, 40 )
 position = Vector2( 672, 40 )
 
 [node name="Banner2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 560, 104 )
+position = Vector2( 560, 144 )
 
 [node name="Banner1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 224, 104 )
+position = Vector2( 224, 144 )
 
 [node name="Clock" parent="." instance=ExtResource( 6 )]
 position = Vector2( 392, 104 )
@@ -90,3 +90,5 @@ position = Vector2( 224, 32 )
 
 [node name="Window2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 560, 32 )
+
+[node name="DividingWalls" type="Node2D" parent="."]

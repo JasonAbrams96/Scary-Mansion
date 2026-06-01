@@ -94,34 +94,40 @@ position = Vector2( -696, -24 )
 is_regular_bookcase = false
 
 [node name="Crate" parent="BehindPlayer" instance=ExtResource( 11 )]
-position = Vector2( -360, -48 )
+position = Vector2( -360, -24 )
 
 [node name="PuzzleBox" parent="BehindPlayer" instance=ExtResource( 7 )]
-position = Vector2( 40, -112 )
+position = Vector2( 114, -76 )
 
 [node name="Staircase Room Down" parent="BehindPlayer" instance=ExtResource( 9 )]
 position = Vector2( -1704, -240 )
 room = NodePath("../Starircase Room Up")
+is_debug = true
 
 [node name="Starircase Room Up" parent="BehindPlayer" instance=ExtResource( 12 )]
 position = Vector2( -1704, -16 )
 room = NodePath("../Staircase Room Down")
+is_debug = true
 
 [node name="Staircase Room Down2" parent="BehindPlayer" instance=ExtResource( 9 )]
 position = Vector2( 1432, -464 )
 room = NodePath("../Starircase Room Up2")
+is_debug = true
 
 [node name="Staircase Room Down3" parent="BehindPlayer" instance=ExtResource( 9 )]
 position = Vector2( -2488, -688 )
 room = NodePath("../Starircase Room Up3")
+is_debug = true
 
 [node name="Starircase Room Up2" parent="BehindPlayer" instance=ExtResource( 12 )]
 position = Vector2( 1432, -240 )
 room = NodePath("../Staircase Room Down2")
+is_debug = true
 
 [node name="Starircase Room Up3" parent="BehindPlayer" instance=ExtResource( 12 )]
 position = Vector2( -2488, -464 )
 room = NodePath("../Staircase Room Down3")
+is_debug = true
 
 [node name="Breaker Room" parent="BehindPlayer" instance=ExtResource( 15 )]
 position = Vector2( 648, -240 )
@@ -147,9 +153,10 @@ position = Vector2( -2488, -240 )
 
 [node name="Bathroom" parent="BehindPlayer" instance=ExtResource( 18 )]
 position = Vector2( -1704, -688 )
+is_debug = true
 
 [node name="WallPhone2" parent="BehindPlayer" instance=ExtResource( 22 )]
-position = Vector2( 1976, -96 )
+position = Vector2( 1976, -64 )
 
 [node name="Kitchen" parent="BehindPlayer" instance=ExtResource( 21 )]
 position = Vector2( -920, -688 )

@@ -3,6 +3,7 @@
 [ext_resource path="res://Map/RoomAssets1/Metal Bar Interaction.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Background/metal_bar_insert_sheet.png" type="Texture" id=2]
 
+
 [sub_resource type="CircleShape2D" id=1]
 radius = 56.0
 

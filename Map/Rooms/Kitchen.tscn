@@ -81,3 +81,5 @@ position = Vector2( 464, 184 )
 
 [node name="WallPhone" parent="." instance=ExtResource( 10 )]
 position = Vector2( 194, 159 )
+
+[node name="DividingWalls" type="Node2D" parent="."]

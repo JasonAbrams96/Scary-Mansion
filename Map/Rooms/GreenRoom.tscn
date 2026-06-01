@@ -89,3 +89,5 @@ position = Vector2( 224, 112 )
 
 [node name="Window_Big2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 560, 112 )
+
+[node name="DividingWalls" type="Node2D" parent="."]

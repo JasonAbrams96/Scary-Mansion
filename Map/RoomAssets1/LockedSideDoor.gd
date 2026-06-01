@@ -7,6 +7,9 @@ var is_unlocked = false
 export var key_needed_name:String
 export var scene_to_load:String
 
+func flip_door():
+	$StaticBody2D/SideDoor.flip_h = !$StaticBody2D/SideDoor.flip_h
+
 func _ready():
 	if key_needed_name == "":
 		is_unlocked = true

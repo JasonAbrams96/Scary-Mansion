@@ -4,10 +4,10 @@
 [ext_resource path="res://Map/RoomAssets1/LockedSideDoor.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 64 )
+extents = Vector2( 16, 64 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 34, 48 )
+extents = Vector2( 44, 48 )
 
 [node name="LockedDoor" type="Node2D"]
 script = ExtResource( 2 )
@@ -19,13 +19,13 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 4, -8 )
+position = Vector2( 0, -8 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 14, 8 )
+position = Vector2( 4, 8 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

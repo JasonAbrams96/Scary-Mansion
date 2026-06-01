@@ -80,3 +80,9 @@ position = Vector2( 464, 112 )
 
 [node name="Window4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 608, 112 )
+
+[node name="WallPositions" type="Node2D" parent="."]
+
+[node name="GroundPositions" type="Node2D" parent="."]
+
+[node name="DividingWalls" type="Node2D" parent="."]

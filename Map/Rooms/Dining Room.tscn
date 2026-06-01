@@ -59,7 +59,7 @@ position = Vector2( 560, 0 )
 position = Vector2( 672, 0 )
 
 [node name="ChineCabinet" parent="." instance=ExtResource( 7 )]
-position = Vector2( 672, 144 )
+position = Vector2( 640, 216 )
 
 [node name="DiningTable" parent="." instance=ExtResource( 4 )]
 position = Vector2( 488, 192 )
@@ -76,3 +76,5 @@ position = Vector2( 272, 40 )
 
 [node name="Window_Big" parent="." instance=ExtResource( 6 )]
 position = Vector2( 96, 104 )
+
+[node name="DividingWalls" type="Node2D" parent="."]
