@@ -5,19 +5,6 @@ var can_go_down = false
 var player = null
 onready var my_pos = $Position2D.global_position
 
-export var is_debug = false
-
-func remove_left_room_wall():
-	$RoomWalls/Left.queue_free()
-
-func remove_right_room_wall():
-	$RoomWalls/Right.queue_free()
-
-
-func _ready():
-	if is_debug:
-		remove_left_room_wall()
-		remove_right_room_wall()
 
 func _on_AreaDown_body_entered(body):
 	if body:

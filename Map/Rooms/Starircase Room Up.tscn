@@ -83,5 +83,9 @@ position = Vector2( 512, 128 )
 
 [node name="DividingWalls" type="Node2D" parent="."]
 
+[node name="WallPositions" type="Node2D" parent="."]
+
+[node name="GroundPositions" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="AreaUp" to="." method="_on_AreaUp_body_entered"]
 [connection signal="body_exited" from="AreaUp" to="." method="_on_AreaUp_body_exited"]

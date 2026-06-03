@@ -3,12 +3,11 @@
 [ext_resource path="res://Assets/Images/Background/BathroomShelf.png" type="Texture" id=1]
 [ext_resource path="res://Map/RoomAssets1/Damagables.gd" type="Script" id=2]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.0
 
 [node name="BathroomShelf" type="Sprite"]
-scale = Vector2( 1.25, 1.25 )
+scale = Vector2( 1.45, 1.45 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, 0.8 )
 hframes = 2

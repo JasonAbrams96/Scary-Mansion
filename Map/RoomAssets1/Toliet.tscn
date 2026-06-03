@@ -3,13 +3,11 @@
 [ext_resource path="res://Map/RoomAssets1/Toliet.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Background/Toliet_sheet.png" type="Texture" id=2]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 21.3333
 height = 86.6667
 
 [node name="Toliet" type="Sprite"]
-scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 hframes = 3
 frame = 2

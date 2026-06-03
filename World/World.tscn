@@ -102,32 +102,26 @@ position = Vector2( 114, -76 )
 [node name="Staircase Room Down" parent="BehindPlayer" instance=ExtResource( 9 )]
 position = Vector2( -1704, -240 )
 room = NodePath("../Starircase Room Up")
-is_debug = true
 
 [node name="Starircase Room Up" parent="BehindPlayer" instance=ExtResource( 12 )]
 position = Vector2( -1704, -16 )
 room = NodePath("../Staircase Room Down")
-is_debug = true
 
 [node name="Staircase Room Down2" parent="BehindPlayer" instance=ExtResource( 9 )]
 position = Vector2( 1432, -464 )
 room = NodePath("../Starircase Room Up2")
-is_debug = true
 
 [node name="Staircase Room Down3" parent="BehindPlayer" instance=ExtResource( 9 )]
 position = Vector2( -2488, -688 )
 room = NodePath("../Starircase Room Up3")
-is_debug = true
 
 [node name="Starircase Room Up2" parent="BehindPlayer" instance=ExtResource( 12 )]
 position = Vector2( 1432, -240 )
 room = NodePath("../Staircase Room Down2")
-is_debug = true
 
 [node name="Starircase Room Up3" parent="BehindPlayer" instance=ExtResource( 12 )]
 position = Vector2( -2488, -464 )
 room = NodePath("../Staircase Room Down3")
-is_debug = true
 
 [node name="Breaker Room" parent="BehindPlayer" instance=ExtResource( 15 )]
 position = Vector2( 648, -240 )

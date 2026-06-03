@@ -19,7 +19,9 @@ var dict = {"a":"Foyer",
 			"i":"Blue_Room",
 			"j":"Dining_Room",
 			"k":"Kitchen",
-			"l":"Bathroom"
+			"l":"Bathroom",
+			"m":"Bedroom"
+			
 			}
 
 func init_map():
