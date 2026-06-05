@@ -11,7 +11,7 @@ var message_to_display = ""
 var displaying_message = false
 
 var lbl_spot_left_face = Vector2(0, -104)
-var lbl_spot_right_face = Vector2(-108, -104)
+var lbl_spot_right_face = Vector2(-192, -104)
 var y_changed = false
 
 

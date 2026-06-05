@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Images/Background/BedroomDresser.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Background/BedroomTV.png" type="Texture" id=2]
+[ext_resource path="res://Map/RoomAssets1/BedDresser.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 52, 10 )
+
+[node name="BedDresser" type="Sprite"]
+texture = ExtResource( 1 )
+hframes = 2
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.90735e-06, 0 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -41 )
+texture = ExtResource( 2 )
+hframes = 2
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

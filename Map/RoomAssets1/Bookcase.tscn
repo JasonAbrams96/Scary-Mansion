@@ -4,7 +4,7 @@
 [ext_resource path="res://Map/RoomAssets1/Bookcase.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 56, 66 )
+extents = Vector2( 44.5, 62.5 )
 
 [node name="Bookcase" type="Area2D"]
 script = ExtResource( 2 )
@@ -17,7 +17,7 @@ frame = 2
 region_rect = Rect2( 0, 0, 114, 137 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 57, -68 )
+position = Vector2( 56.5, -64.5 )
 shape = SubResource( 1 )
 
 [node name="Book_Positions" type="Node2D" parent="."]
