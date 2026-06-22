@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/Images/Player/Playerpng.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Player/PlayerSheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Player/GUI.tscn" type="PackedScene" id=3]
 
@@ -19,12 +19,47 @@ font_data = SubResource( 4 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9, 39 )
 
+[sub_resource type="Animation" id=7]
+resource_name = "Idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Walk"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1, 2, 3, 4 ]
+}
+
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 3 )
 texture = ExtResource( 1 )
+hframes = 5
+vframes = 2
 
 [node name="LabelMessage" type="Label" parent="."]
 margin_left = -192.0
@@ -42,5 +77,9 @@ position = Vector2( 1, 9 )
 shape = SubResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 3 )]
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 7 )
+anims/Walk = SubResource( 6 )
 
 [connection signal="timeout" from="LabelMessage/Timer" to="." method="_on_Timer_timeout"]
