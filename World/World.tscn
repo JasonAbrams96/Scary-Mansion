@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Map/RoomAssets1/Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -21,7 +21,6 @@
 [ext_resource path="res://Map/Outside/Outside.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Map/Rooms/Dining Room.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Map/Rooms/Kitchen.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Map/RoomAssets1/WallPhone.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Map/Rooms/Bedroom.tscn" type="PackedScene" id=23]
 
 [node name="World" type="Node"]
@@ -157,9 +156,6 @@ position = Vector2( -2488, -240 )
 [node name="Bathroom" parent="BehindPlayer" instance=ExtResource( 18 )]
 position = Vector2( -1704, -688 )
 is_debug = true
-
-[node name="WallPhone2" parent="BehindPlayer" instance=ExtResource( 22 )]
-position = Vector2( 1976, -64 )
 
 [node name="Kitchen" parent="BehindPlayer" instance=ExtResource( 21 )]
 position = Vector2( -920, -688 )

@@ -6,6 +6,8 @@ var player_inside_area = false
 var contents = null
 var book_set = false
 export var is_regular_bookcase = true
+var is_door_bookcase = false
+
 var message = ""
 
 func _ready():
@@ -16,8 +18,8 @@ func _ready():
 			contents = null
 			
 		else:
-			var b = GlobalAssets.get_random_book()
-			set_up_where_book_spawns(b)
+			var b_arr = GlobalAssets.get_random_book()
+			set_up_where_book_spawns(b_arr)
 		message = "I can make out some sort of spot, it looks like it might be missing a %s" % correct_book.my_name
 	else:
 		message = "This is a nice looking bookcase. Wonder why this place looks crappy."
@@ -73,16 +75,16 @@ func set_up_where_book_spawns(array):
 		
 		
 	#This now gives the positions and then takes a random position to be able to place a book spot
-	var position_rand = positions[Global.rng.randi() % positions.size()]
+	var position_rand
+	if positions != null:
+		position_rand = positions[Global.rng.randi() % positions.size()]
 	
-	#Sets the random sprite to 
-	var sprite = Sprite.new()
-	sprite.texture = array[0]
-	sprite.global_position = position_rand.position
-	$Sprite.add_child(sprite)
-	
-	correct_book = array[1]
-	
+		#Sets the random sprite to 
+		var sprite = load(array[0]).instance()
+		sprite.global_position = position_rand.position
+		add_child(sprite)
+		correct_book = array[1]
+		
 func open():
 	pass
 

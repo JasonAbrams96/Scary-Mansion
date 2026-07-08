@@ -1,33 +1,39 @@
 extends Node
 
-var missing_books_sprites = {
-			"1":preload("res://Assets/Images/Background/b_m_book.png"),
-			"2":preload("res://Assets/Images/Background/r_m_book.png"),
-			"3":preload("res://Assets/Images/Background/p_m_book.png"),
-			"4":preload("res://Assets/Images/Background/o_m_book.png"),
-			"5":preload("res://Assets/Images/Background/y_m_book.png"),
-			"6":preload("res://Assets/Images/Background/g_m_book.png"),
-}
+var missing_books_sprites = [
+			"res://Map/RoomAssets1/BookcaseMBook_B.tscn",
+			"res://Map/RoomAssets1/BookcaseMBook_R.tscn",
+			"res://Map/RoomAssets1/BookcaseMBook_P.tscn",
+			"res://Map/RoomAssets1/BookcaseMBook_O.tscn",
+			"res://Map/RoomAssets1/BookcaseMBook_Y.tscn",
+			"res://Map/RoomAssets1/BookcaseMBook_G.tscn"
+]
+var book_items = []
+var book_items_was_populated = false
 
+func _populate_book_items():
+	if book_items.size() == 0 and !book_items_was_populated:
+		book_items.push_back(GlobalItems.items[GlobalItems.items_names["blue book"]])
+		book_items.push_back(GlobalItems.items[GlobalItems.items_names["red book"]])
+		book_items.push_back(GlobalItems.items[GlobalItems.items_names["purple book"]])
+		book_items.push_back(GlobalItems.items[GlobalItems.items_names["orange book"]])
+		book_items.push_back(GlobalItems.items[GlobalItems.items_names["yellow book"]])
+		book_items.push_back(GlobalItems.items[GlobalItems.items_names["green book"]])
+		book_items_was_populated = true
+		
+		
 func get_random_book():
-	var r = int(Global.rng.randi() % missing_books_sprites.size()) + 1
-	var b = missing_books_sprites[String(r)]
-	missing_books_sprites.erase(String(r))
+	_populate_book_items()
+	var r = int(Global.rng.randi() % missing_books_sprites.size())
+	var b = missing_books_sprites[r]
+	var bi = book_items[r]
+	
+	missing_books_sprites.remove(r)
+	book_items.remove(r)
 	
 	var arra = []
 	arra.push_back(b)
+	arra.push_back(bi)
 	
-	if r == 1:
-		arra.push_back(GlobalItems.items[GlobalItems.items_names["blue book"]])
-	elif r == 2:
-		arra.push_back(GlobalItems.items[GlobalItems.items_names["red book"]])
-	elif r == 3:
-		arra.push_back(GlobalItems.items[GlobalItems.items_names["purple book"]])
-	elif r == 4:
-		arra.push_back(GlobalItems.items[GlobalItems.items_names["orange book"]])
-	elif r == 5:
-		arra.push_back(GlobalItems.items[GlobalItems.items_names["yellow book"]])
-	elif r == 6:
-		arra.push_bakc(GlobalItems.items[GlobalItems.items_names["green book"]])
 		
 	return arra

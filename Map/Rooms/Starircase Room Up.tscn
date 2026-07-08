@@ -76,7 +76,7 @@ shape = SubResource( 1 )
 position = Vector2( 192, 168 )
 
 [node name="Wall Torch" parent="." instance=ExtResource( 7 )]
-position = Vector2( 128, 128 )
+position = Vector2( 192, 120 )
 
 [node name="Wall Torch2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 512, 128 )
@@ -84,6 +84,12 @@ position = Vector2( 512, 128 )
 [node name="DividingWalls" type="Node2D" parent="."]
 
 [node name="WallPositions" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="WallPositions"]
+position = Vector2( 64, 128 )
+
+[node name="Position2D2" type="Position2D" parent="WallPositions"]
+position = Vector2( 672, 128 )
 
 [node name="GroundPositions" type="Node2D" parent="."]
 
