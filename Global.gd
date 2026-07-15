@@ -17,6 +17,7 @@ signal time_updated(new_time)
 signal change_environment(is_negative)
 signal gui_inventory_closed
 signal dog_to_house
+signal hour_update
 
 var num_of_ghosts = 0
 const max_ghosts = 10
@@ -113,6 +114,7 @@ func time_timer_timeout():
 	current_min += 1
 	if current_min >= min_max:
 		current_hour += 1
+		emit_signal("hour_update")
 		current_min = 0
 	if current_hour >= hour_max:
 		sanity -= 2
@@ -201,3 +203,14 @@ func get_randi():
 	
 func get_randi_range(from, to):
 	return rng.randi_range(from, to)
+
+func get_player_hand_item_ids():
+	var item1 = null
+	var item2 = null
+	
+	if player_left_hand_item_id != -1:
+		item1 = GlobalItems.items_names[player_left_hand_item_id]
+	if player_right_hand_item_id != -1:
+		item2 = GlobalItems.items_names[player_right_hand_item_id]
+	
+	return [item1, item2]
