@@ -25,7 +25,6 @@ func _process(delta):
 		next_room_num -= room_size
 	
 	if $Player.y_changed:
-		
 		if int($Player.global_position.y) > next_room_y_num :
 			the_camera.position.y += room_size_y
 			next_room_y_num += room_size_y

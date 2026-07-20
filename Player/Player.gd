@@ -58,9 +58,9 @@ func get_input():
 	else:
 		#if the right or left is not pressed then slow down
 		if motion.x < 0:
-			motion.x += 40
+			motion.x += speed
 		elif motion.x > 0:
-			motion.x -= 40
+			motion.x -= speed
 		else:
 			motion.x = 0
 	
@@ -79,7 +79,6 @@ func _process(delta):
 			
 func _physics_process(delta):
 	get_input()
-	print(motion)
 	if (motion.x > 0 or motion.x < 0):
 		print("walk")
 		if $Animator.current_animation != "Walk":

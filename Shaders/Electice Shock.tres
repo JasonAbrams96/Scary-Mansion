@@ -1,0 +1,49 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+// Allows customization in the inspector
+uniform vec4 shock_color : hint_color = vec4(0.2, 0.7, 1.0, 1.0);
+uniform float thickness : hint_range(0.005, 0.05) = 0.015;
+uniform float speed : hint_range(1.0, 50.0) = 25.0;
+uniform float frequency : hint_range(1.0, 30.0) = 10.0;
+uniform float amplitude : hint_range(0.05, 0.5) = 0.15;
+
+// Simple pseudo-random noise function to create sharp, electric jaggedness
+float hash(float n) {
+    return fract(sin(n) * 43758.5453123);
+}
+
+float noise(float x) {
+    float i = floor(x);
+    float f = fract(x);
+    float u = f * f * (3.0 - 2.0 * f);
+    return mix(hash(i), hash(i + 1.0), u);
+}
+
+void fragment() {
+    // 1. Create a moving horizontal line using time
+    float time_step = TIME * speed;
+    
+    // 2. Combine layers of noise to get an irregular \"electrical\" shape
+    float jaggedness = noise(UV.x * frequency + time_step) * amplitude;
+    jaggedness += noise(UV.x * frequency * 2.5 - time_step) * (amplitude * 0.4);
+    
+    // 3. Center the wave vertically in the middle of the frame (0.5)
+    float wave = 0.5 + (jaggedness - amplitude * 0.7);
+    
+    // 4. Calculate how close the current pixel is to the electric path
+    float dist = abs(UV.y - wave);
+    
+    // 5. Sharpen the core and build a natural glow gradient around it
+    float electric_line = thickness / dist;
+    
+    // 6. Fast flickering effect mimicking a real shock
+    float flicker = step(0.1, noise(time_step * 2.0));
+    
+    // Final output map
+    vec4 final_color = shock_color * electric_line * flicker;
+    COLOR = final_color;
+}
+"

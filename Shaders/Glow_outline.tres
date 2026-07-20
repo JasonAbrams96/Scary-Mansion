@@ -1,3 +1,30 @@
 [gd_resource type="Shader" format=2]
 
 [resource]
+code = "shader_type canvas_item;
+
+// Customize your glow in the inspector
+uniform vec4 outline_color : hint_color = vec4(0.0, 0.8, 1.0, 1.0);
+uniform float thickness : hint_range(0.0, 10.0) = 2.0;
+
+void fragment() {
+    // 1. Get the size of a single pixel on the texture
+    vec2 size = TEXTURE_PIXEL_SIZE * thickness;
+    
+    // 2. Look at the original color of this exact pixel
+    vec4 current_color = texture(TEXTURE, UV);
+    
+    // 3. Look at the alpha (transparency) of 4 neighboring pixels (Up, Down, Left, Right)
+    float max_alpha = current_color.a;
+    max_alpha = max(max_alpha, texture(TEXTURE, UV + vec2(0.0, size.y)).a);  // Up
+    max_alpha = max(max_alpha, texture(TEXTURE, UV - vec2(0.0, size.y)).a);  // Down
+    max_alpha = max(max_alpha, texture(TEXTURE, UV + vec2(size.x, 0.0)).a);  // Right
+    max_alpha = max(max_alpha, texture(TEXTURE, UV - vec2(size.x, 0.0)).a);  // Left
+    
+    // 4. Mix the original sprite color with the outline color
+    // If it's the inside of the sprite, keep the sprite. If it's the edge, draw the outline.
+    vec4 final_outline = mix(vec4(0.0), outline_color, max_alpha - current_color.a);
+    
+    COLOR = mix(final_outline, current_color, current_color.a);
+}
+"
